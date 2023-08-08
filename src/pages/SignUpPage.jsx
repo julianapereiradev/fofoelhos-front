@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { pages, requisitions } from "../routes/routes";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import axios from "axios";
@@ -39,9 +39,9 @@ export default function SignUpPage() {
         navigate(pages.signIn);
         setDisable(false);
       })
-      .catch((erro) => {
-        console.log('erro de signUp:', erro.response.data.message)
-        alert(erro.response.data.message);
+      .catch((error) => {
+        console.log('error de signUp:', error.response.data.message)
+        alert(error.response.data.message);
         setDisable(false);
       });
   }
@@ -119,6 +119,7 @@ export default function SignUpPage() {
               "Criar Conta"
             )}
           </button>
+        <Link to={`/login`}>Já tem uma conta? Entre agora!</Link>
         </SingUpBox>
       </SingUpContainer>
     </>

@@ -6,6 +6,7 @@ import SignInPage from "./pages/SignInPage";
 import { useState } from "react";
 import SignUpPage from "./pages/SignUpPage";
 import GetStarted from "./pages/GetStarted";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [user, setUser] = useState(0)
@@ -19,6 +20,7 @@ function App() {
           <Route path={pages.getStarted} element={<GetStarted />} />
           <Route path={pages.signIn} element={<SignInPage />} />
           <Route path={pages.signUp} element={<SignUpPage />} />
+          <Route path={pages.home} element={<HomePage />} />
         </Routes>
         </BrowserRouter>
       </AuthContext.Provider>
