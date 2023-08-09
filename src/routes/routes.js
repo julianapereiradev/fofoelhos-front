@@ -5,7 +5,8 @@ export const pages = {
     getStarted: '/',
     bunnyId: '/coelho/',
     formPage: '/formulario',
-    myBunnies: '/meus-coelhos'
+    myBunnies: '/meus-coelhos',
+    updateBunny: '/atualizar-coelho/'
 }
 
 const API_URL = 'http://localhost:5000';
@@ -17,7 +18,8 @@ export const requisitions = {
     getBunnies: API_URL + '/home',
     postBunny: API_URL + '/postBunny',
     getBunny: API_URL + '/bunny/',
-    getTables: API_URL + '/getTables'
+    getTables: API_URL + '/getTables',
+    getMyBunnies: API_URL + '/myBunnies'
 }
 
 export function headersAuth(token) {
