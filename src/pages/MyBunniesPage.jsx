@@ -41,11 +41,11 @@ console.log('tudo de myBunnies aqui:', myBunnies)
       <BunnyContainer>
         <Main>
           {myBunnies ? (
-            myBunnies.map((item) =>
-            <>
+            myBunnies.map((item, index) =>
+            <div key={index}>
             <h1>Nome do tutor(a): {item.dono}</h1>
             <MyBunny key={item.id} item={item}/>
-            </>
+            </div>
             )
           ) : (
             <ThreeDots type="ThreeDots" color="#ffffff" height={90} width={150} />
