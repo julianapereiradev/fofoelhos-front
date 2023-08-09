@@ -21,6 +21,7 @@ export default function UpdateFormPage() {
   const [selectedSize, setSelectedSize] = useState("1");
   const [url, setUrl] = useState("");
   const [active, setActive] = useState(true);
+  const [bunny, setBunny] = useState(undefined);
   const [disable, setDisable] = useState(false);
 
   const navigate = useNavigate();
@@ -38,10 +39,30 @@ export default function UpdateFormPage() {
         alert(error.response.data);
         console.log('error de getTables front:', error)
       });
+
+
+    axios.get(requisitions.getBunny + id, headersAuth(user.token))
+      .then(resp => {
+        setBunny(resp.data);
+        setName(resp.data.name);
+        setAge(resp.data.age)
+        setDescription(resp.data.description)
+        setUrl(resp.data.url)
+        setSelectedBreed(resp.data.breedId)
+        setSelectedSkinColor(resp.data.skinColorId)
+        setSelectedSize(resp.data.sizeId)
+        setActive(resp.data.active)
+        console.log('resp de getBunny front', resp);
+      })
+      .catch(error => {
+        alert(error.response.data);
+        console.log('error de getBunny front', error)
+        navigate(pages.home);
+      });
   }, [user]);
 
   console.log('tables aqui:', tables)
-
+  console.log('bunnyId aqui:', bunny)
 
 
   function UpdateBunnyItem(e) {
