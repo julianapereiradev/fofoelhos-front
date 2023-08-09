@@ -40,8 +40,8 @@ export default function SignUpPage() {
         setDisable(false);
       })
       .catch((error) => {
-        console.log('error de signUp:', error.response.data.message)
-        alert(error.response.data.message);
+        console.log('error de signUp:', error)
+        alert(error.response.data);
         setDisable(false);
       });
   }
