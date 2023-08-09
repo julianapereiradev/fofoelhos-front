@@ -38,5 +38,5 @@ function App() {
 export default App;
 
 const PagesContainer = styled.main`
- background-color: #fff;
+ /* background-color: red; */
 `
