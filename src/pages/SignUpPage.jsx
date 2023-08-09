@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import axios from "axios";
+import logoGetStarted from "../images/logoGetStarted.png"
 
 export default function SignUpPage() {
   const [name, setName] = useState("");
@@ -50,11 +51,12 @@ export default function SignUpPage() {
     <>
       <SingUpContainer>
         <SingUpBox onSubmit={SignUp}>
-        <h1>Cadastro</h1>
+        <img src={logoGetStarted} />
+        <div>
           <input
             type="text"
             autoComplete="name"
-            placeholder="Nome"
+            placeholder="NOME"
             required
             disabled={disable}
             value={name}
@@ -63,7 +65,7 @@ export default function SignUpPage() {
           <input
             type="email"
             autoComplete="email"
-            placeholder="E-mail"
+            placeholder="E-MAIL"
             required
             disabled={disable}
             value={email}
@@ -81,7 +83,7 @@ export default function SignUpPage() {
            <input
             type="text"
             autoComplete="phone"
-            placeholder="Telefone para contato"
+            placeholder="TELEFONE DO TUTOR"
             required
             disabled={disable}
             value={phone}
@@ -89,7 +91,7 @@ export default function SignUpPage() {
           />
           <input
             type="password"
-            placeholder="Senha"
+            placeholder="SENHA"
             autoComplete="new-password"
             required
             disabled={disable}
@@ -99,27 +101,30 @@ export default function SignUpPage() {
 
           <input
             type="password"
-            placeholder="Confirmar senha"
+            placeholder="CONFIRMAR SENHA"
             autoComplete="confirm-password"
             required
             disabled={disable}
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
+          </div>
 
-          <button type="submit" disabled={disable}>
-            {disable ? (
-              <ThreeDots
-                type="ThreeDots"
-                color="#ffffff"
-                height={20}
-                width={50}
-              />
-            ) : (
-              "Criar Conta"
-            )}
-          </button>
-        <Link to={`/login`}>Já tem uma conta? Entre agora!</Link>
+        <BoxButtons>
+        <button type="submit" disabled={disable}>
+          {disable ? (
+            <ThreeDots
+              type="ThreeDots"
+              color="#ffffff"
+              height={20}
+              width={50}
+            />
+          ) : (
+            "CADASTRAR"
+          )}
+        </button>
+        <LinkToSignIn to={`/login`}>JÁ TEM CADASTRO? CLIQUE AQUI</LinkToSignIn>
+        </BoxButtons>
         </SingUpBox>
       </SingUpContainer>
     </>
@@ -127,36 +132,54 @@ export default function SignUpPage() {
 }
 
 const SingUpContainer = styled.div`
-  /* border: 3px solid red; */
-`;
-
-const SingUpBox = styled.form`
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+`;
 
-  input {
-    /* width: 70%;
-    height: 60px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    border: 1px solid rgb(120, 177, 89, 25%);
-    box-shadow: rgba(156, 156, 156, 0.2) 0px 7px 29px 0px;
-    padding-left: 10px;
-    font-weight: 500; */
+const SingUpBox = styled.form`
+ display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  img {
+    width: 200px;
   }
 
-  button {
-    /* margin-top: 50px;
-    height: 60px;
-    width: 200px;
-    border-radius: 12px;
-    border: none;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    background-color: #5D9040; */
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 `;
+
+const BoxButtons = styled.div`
+  /* border: 3px solid red; */
+`;
+
+export const LinkToSignIn = styled(Link)`
+ color:  #ff995c;
+ font-Size: 14px;
+ text-decoration: none;
+ font-size: 18px;
+ border: 2px solid #ff995c;
+ width: 80%;
+ height: 45px;
+ border-radius: 50px;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ font-size: 12px;
+ margin-top: 30px;
+ font-weight: 700;
+ letter-spacing: 1px;
+`

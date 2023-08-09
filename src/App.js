@@ -16,7 +16,7 @@ function App() {
   const [user, setUser] = useState(0)
 
   return (
-    <PagesContainer>
+   
       <AuthContext.Provider value={{user, setUser}}>
         <BrowserRouter>
         <Routes>
@@ -31,12 +31,8 @@ function App() {
         </Routes>
         </BrowserRouter>
       </AuthContext.Provider>
-    </PagesContainer>
+   
   );
 }
 
 export default App;
-
-const PagesContainer = styled.main`
- /* background-color: red; */
-`

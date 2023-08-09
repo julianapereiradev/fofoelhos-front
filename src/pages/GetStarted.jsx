@@ -19,6 +19,7 @@ export default function GetStarted() {
         </div>
         <button onClick={() => navigate(pages.signIn)}>INICIAR</button>
       </GetStartedBox>
+      <h4>Website inspired by Alena Yegorova layout</h4>
     </GetStartedContainer>
   );
 }
@@ -29,6 +30,13 @@ const GetStartedContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h4 {
+    color: #8a8a8a;
+    font-weight: 300;
+    margin-bottom: 3px;
+    font-size: 12px;
+  }
 `;
 
 const GetStartedBox = styled.div`
@@ -37,6 +45,11 @@ const GetStartedBox = styled.div`
   justify-content: space-evenly;
   align-items: center;
   height: 100vh;
+  width: 100%;
+
+  img {
+    width: 200px;
+  }
 
   div {
     text-align: center;
@@ -52,10 +65,6 @@ const GetStartedBox = styled.div`
   h2 {
     color: #8a8a8a;
     font-weight: 500;
-  }
-
-  img {
-    width: 200px;
   }
 `;
 
