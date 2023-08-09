@@ -19,7 +19,8 @@ export const requisitions = {
     postBunny: API_URL + '/postBunny',
     getBunny: API_URL + '/bunny/',
     getTables: API_URL + '/getTables',
-    getMyBunnies: API_URL + '/myBunnies'
+    getMyBunnies: API_URL + '/myBunnies',
+    updateBunny: API_URL + '/bunny/'
 }
 
 export function headersAuth(token) {
