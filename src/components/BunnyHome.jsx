@@ -13,7 +13,7 @@ export default function BunnyHome({ item }) {
         <>
         <BunnyBoxHome>
             <ItemBunny onClick={() => openUrlId(item.id)}>
-                <img src={item.url} width={80}/>
+                <img src={item.url} width={80} alt="Imagens de Coelho"/>
                 <div>Nome do Coelho: {item.name}</div>
                 <div>Age: {item.age}</div>
             </ItemBunny>
