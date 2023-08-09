@@ -4,7 +4,8 @@ export const pages = {
     home: '/home',
     getStarted: '/',
     bunnyId: '/coelho/',
-    formPage: '/formulario'
+    formPage: '/formulario',
+    myBunnies: '/meus-coelhos'
 }
 
 const API_URL = 'http://localhost:5000';

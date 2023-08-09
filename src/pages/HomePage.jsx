@@ -36,6 +36,11 @@ export default function HomePage() {
     navigate(pages.formPage)
   }
 
+  function goToFMyBunniesPage() {
+    navigate(pages.myBunnies)
+  }
+
+
 console.log('tudo de bunnies aqui:', bunnies)
 
   return (
@@ -43,6 +48,7 @@ console.log('tudo de bunnies aqui:', bunnies)
        {/*colocar depois um header  */}
        <h1>Página de Home</h1>
        <button onClick={goToFormPage}>+</button>
+       <button onClick={goToFMyBunniesPage}>Perfil</button>
       <BunnyContainer>
         <Main>
           {bunnies ? (

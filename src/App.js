@@ -9,6 +9,7 @@ import GetStarted from "./pages/GetStarted";
 import HomePage from "./pages/HomePage";
 import BunnyPage from "./pages/BunnyPage";
 import FormPage from "./pages/FormPage";
+import MyBunniesPage from "./pages/MyBunniesPage";
 
 function App() {
   const [user, setUser] = useState(0)
@@ -25,6 +26,7 @@ function App() {
           <Route path={pages.home} element={<HomePage />} />
           <Route path={pages.formPage} element={<FormPage />} />
           <Route path={pages.bunnyId + ':id'} element={<BunnyPage />} />
+          <Route path={pages.myBunnies} element={<MyBunniesPage />} />
         </Routes>
         </BrowserRouter>
       </AuthContext.Provider>
