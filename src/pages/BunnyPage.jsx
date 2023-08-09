@@ -47,7 +47,7 @@ export default function BunnyPage() {
                 <span><strong>Descrição: </strong>{bunny.description}</span>
                 <span><strong>Idade: </strong>{bunny.age}</span>
                 <span><strong>Dono: </strong>{bunny.dono}</span>
-                <span><strong>Telefone de contato do dono: </strong>COLOCAR</span>
+                <span><strong>Telefone para contato: </strong>{bunny.phone}</span>
                 <span><strong>Raça: </strong>{bunny.breed}</span>
                 <span><strong>Cor: </strong>{bunny.skinColor}</span>
                 <span><strong>Tamanho: </strong>{bunny.size}</span>
