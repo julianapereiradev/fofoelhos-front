@@ -28,6 +28,10 @@ export default function BunnyPage() {
       });
   }, [user])
 
+  function redirectWhatsApp() {
+    alert("Redirecionar para o WhatApp ao clicar")
+  }
+
   return (
     <>
       <BunnyContainer>
@@ -39,10 +43,16 @@ export default function BunnyPage() {
             <InfoContainer>
               <BunnyInfo>
               <span><strong>Id do coelho: </strong>{bunny.id}</span>
-                <span><strong>Título: </strong>{bunny.name}</span>
+                <span><strong>Nome: </strong>{bunny.name}</span>
                 <span><strong>Descrição: </strong>{bunny.description}</span>
-                <span><strong>Autor: </strong>{bunny.tutor}</span>
-                <span><strong>Gênero: </strong>{bunny.age}</span>
+                <span><strong>Idade: </strong>{bunny.age}</span>
+                <span><strong>Dono: </strong>{bunny.dono}</span>
+                <span><strong>Telefone de contato do dono: </strong>COLOCAR</span>
+                <span><strong>Raça: </strong>{bunny.breed}</span>
+                <span><strong>Cor: </strong>{bunny.skinColor}</span>
+                <span><strong>Tamanho: </strong>{bunny.size}</span>
+                <span><strong>Status: </strong>{bunny.active === true ? ("Ativo") : ("Inativo")}</span>
+              <button onClick={redirectWhatsApp}>CONTRATAR</button>
               </BunnyInfo>
             </InfoContainer>
 
@@ -86,17 +96,8 @@ const InfoContainer = styled.section`
 `
 
 const BunnyInfo = styled.div`
-  /* width: 100%;
-  border: 1px solid #F6E4C4;
-  color: #FFF;
-  font-family: Inika, serif;
-  font-size: 2.2vh;
-  text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  padding: 15px 0; */
 
   strong {
     font-weight: 700;
