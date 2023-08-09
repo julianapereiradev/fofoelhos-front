@@ -3,7 +3,8 @@ export const pages = {
     signUp: '/cadastro',
     home: '/home',
     getStarted: '/',
-    bunnyId: '/bunny/'
+    bunnyId: '/coelho/',
+    formPage: '/formulario'
 }
 
 const API_URL = 'http://localhost:5000';
@@ -13,7 +14,9 @@ export const requisitions = {
     postSignUp: API_URL + '/signup',
     postSignIn: API_URL + '/signin',
     getBunnies: API_URL + '/home',
-    getBunny: API_URL + '/bunny/'
+    postBunny: API_URL + '/postBunny',
+    getBunny: API_URL + '/bunny/',
+    getTables: API_URL + '/getTables'
 }
 
 export function headersAuth(token) {

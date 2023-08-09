@@ -32,12 +32,17 @@ export default function HomePage() {
       });
   }, [user]);
 
+  function goToFormPage() {
+    navigate(pages.formPage)
+  }
+
 console.log('tudo de bunnies aqui:', bunnies)
 
   return (
     <HomeContainer>
        {/*colocar depois um header  */}
        <h1>Página de Home</h1>
+       <button onClick={goToFormPage}>+</button>
       <BunnyContainer>
         <Main>
           {bunnies ? (
