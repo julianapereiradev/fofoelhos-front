@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
@@ -7,72 +7,78 @@ import AuthContext from "../contexts/AuthContext";
 import { headersAuth, pages, requisitions } from "../routes/routes";
 import { validateUser } from "../constants/functions";
 import BunnyHome from "../components/BunnyHome";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function HomePage() {
-
   const navigate = useNavigate();
 
-  const { user, setUser } = useContext(AuthContext)
+  const { user, setUser } = useContext(AuthContext);
 
-  const [bunnies, setBunnies] = useState(undefined)
+  const [bunnies, setBunnies] = useState(undefined);
 
   useEffect(() => {
-
     validateUser(user, setUser);
 
-    axios.get(requisitions.getBunnies, headersAuth(user.token))
-      .then(res => {
-        setBunnies(res.data)
-        console.log('res de getBunnies front:', res)
+    axios
+      .get(requisitions.getBunnies, headersAuth(user.token))
+      .then((res) => {
+        setBunnies(res.data);
+        console.log("res de getBunnies front:", res);
       })
-      .catch(error => {
+      .catch((error) => {
         navigate(pages.signIn);
         alert(error.response.data);
-        console.log('error de getBunnies front:', error)
+        console.log("error de getBunnies front:", error);
       });
   }, [user]);
 
-  function goToFormPage() {
-    navigate(pages.formPage)
-  }
-
-  function goToFMyBunniesPage() {
-    navigate(pages.myBunnies)
-  }
-
-
-console.log('tudo de bunnies aqui:', bunnies)
+  console.log("tudo de bunnies aqui:", bunnies);
 
   return (
-    <HomeContainer>
-       {/*colocar depois um header  */}
-       <h1>Página de Home</h1>
-       <button onClick={goToFormPage}>+</button>
-       <button onClick={goToFMyBunniesPage}>Perfil</button>
-      <BunnyContainer>
-        <Main>
+    <>
+      <Header />
+
+      <HomePageContainer>
+        <BunnyItemHomeBox>
           {bunnies ? (
-            bunnies.map(item => <BunnyHome key={item.id} item={item}/>)
+            bunnies.map((item) => <BunnyHome key={item.id} item={item} />)
           ) : (
-            <ThreeDots type="ThreeDots" color="#ffffff" height={90} width={150} />
+            <ThreeDots
+              type="ThreeDots"
+              color="#ffffff"
+              height={90}
+              width={150}
+            />
           )}
-        </Main>
-      </BunnyContainer>
-    </HomeContainer>
-  )
+        </BunnyItemHomeBox>
+      </HomePageContainer>
+
+     <Footer />
+    </>
+  );
 }
 
-const HomeContainer = styled.div`
+
+const HomePageContainer = styled.div`
+  margin-top: 70px;
+  margin-bottom: 70px;
+  padding-top: 50px;
+  padding-bottom: 90px;
+  padding-left: 10px;
+  padding-right: 10px;
+`;
+
+const BunnyItemHomeBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-`
 
-const BunnyContainer = styled.div`
-  /* width: 100%; */
-`
-
-const Main = styled.div`
-  /* border: 2px solid green */
-`
+  p {
+    font-family: "Lexend Deca";
+    font-size: 18px;
+    color: #666666;
+    line-height: 22px;
+  }
+`;
