@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     input {
         font-family: 'Pontano Sans', sans-serif;
 		height: 50px;
-		width: 80%;
+		width: 100%;
 		border: none;
 		border-radius: 10px;
 		font-size: 20px;

@@ -40,10 +40,9 @@ export default function SignInPage() {
   }
 
   return (
-    <SingInContainer>
       <SingInBox onSubmit={SignIn}>
         <img src={logoGetStarted} />
-        <div>
+        
           <input
             type="email"
             autoComplete="email"
@@ -63,9 +62,7 @@ export default function SignInPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
 
-    <BoxButtons>
         <button type="submit" disabled={disable}>
           {disable ? (
             <ThreeDots
@@ -79,44 +76,31 @@ export default function SignInPage() {
           )}
         </button>
         <LinkToSignUp to={`/cadastro`}>PRIMEIRA VEZ? CLIQUE AQUI</LinkToSignUp>
-        </BoxButtons>
       </SingInBox>
-    </SingInContainer>
   );
 }
 
-const SingInContainer = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+
 
 const SingInBox = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  padding: 30px;
+  max-width: 400px;
   height: 100vh;
-  width: 100%;
 
   img {
     width: 200px;
+    margin-bottom: 30px;
   }
 
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  button {
+    margin-top: 40px;
   }
 `;
 
-const BoxButtons = styled.div`
-  /* border: 3px solid red; */
-`;
 
 export const LinkToSignUp = styled(Link)`
  color:  #ff995c;
@@ -124,7 +108,7 @@ export const LinkToSignUp = styled(Link)`
  text-decoration: none;
  font-size: 18px;
  border: 2px solid #ff995c;
- width: 80%;
+ width: 100%;
  height: 45px;
  border-radius: 50px;
  display: flex;
