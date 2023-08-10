@@ -21,8 +21,8 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         border-radius: 50px;
         color: #FFFFFF;
-        width: 80%;
         height: 45px;
+		width: 100%;
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 1px;

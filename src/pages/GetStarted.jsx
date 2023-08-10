@@ -8,51 +8,31 @@ export default function GetStarted() {
 
   return (
     <GetStartedContainer>
-      <GetStartedBox>
-        <img src={logoGetStarted} />
-        <div>
-          <h1>Fofoelhos</h1>
-          <h1>Agency</h1>
-          <Space>{""}</Space>
-          <h2>A sua agência nº 1 para contratar</h2>
-          <h2>coelhos como modelos!</h2>
-        </div>
-        <button onClick={() => navigate(pages.signIn)}>INICIAR</button>
-      </GetStartedBox>
-      <h4>Website inspired by Alena Yegorova layout</h4>
+      <img src={logoGetStarted} />
+      <h1>Fofoelhos</h1>
+      <h1>Agency</h1>
+      <Space>{""}</Space>
+      <h2>A sua agência nº 1 para contratar</h2>
+      <h2>coelhos como modelos!</h2>
+      <Space>{""}</Space>
+      <button onClick={() => navigate(pages.signIn)}>INICIAR</button>
+      <BottomText>Website inspired by Alena Yegorova layout</BottomText>
     </GetStartedContainer>
   );
 }
 
-const GetStartedContainer = styled.div`
-  height: 100vh;
+const GetStartedContainer = styled.form`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  h4 {
-    color: #8a8a8a;
-    font-weight: 300;
-    margin-bottom: 3px;
-    font-size: 12px;
-  }
-`;
-
-const GetStartedBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  padding: 30px;
+  max-width: 400px;
   height: 100vh;
-  width: 100%;
 
   img {
     width: 200px;
-  }
-
-  div {
-    text-align: center;
   }
 
   h1 {
@@ -70,4 +50,15 @@ const GetStartedBox = styled.div`
 
 const Space = styled.div`
   margin-bottom: 30px;
+`;
+
+const BottomText = styled.h4`
+  position: absolute;
+  bottom: 10px;
+  left: 50%; /* Posiciona o texto no centro horizontal */
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  color: #8a8a8a;
+  font-weight: 300;
+  font-size: 12px;
+  text-align: center;
 `;
