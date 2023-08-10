@@ -131,7 +131,7 @@ const SingUpBox = styled.form`
   justify-content: center;
   align-items: center;
   padding: 30px;
-  max-width: 400px;
+  max-width: 500px;
   height: 100vh;
 
   img {

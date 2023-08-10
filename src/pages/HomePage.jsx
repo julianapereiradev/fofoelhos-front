@@ -67,6 +67,7 @@ const HomePageContainer = styled.div`
   padding-bottom: 90px;
   padding-left: 10px;
   padding-right: 10px;
+  max-width: 500px;
 `;
 
 const BunnyItemHomeBox = styled.div`

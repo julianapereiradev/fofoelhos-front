@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        max-width: 400px;
+        max-width: 500px;
 		height: 100vh;
 		background-color: #fff4ee;
         border: 1px solid black;

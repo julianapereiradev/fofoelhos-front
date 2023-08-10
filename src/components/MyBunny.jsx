@@ -25,6 +25,7 @@ export default function MyBunny({ item }) {
 
 const BunnyBox = styled.div`
 border: 1px solid black;
+max-width: 500px;
 `
 
 const ItemBunny = styled.div`
