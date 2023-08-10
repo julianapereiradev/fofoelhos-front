@@ -65,6 +65,9 @@ export default function UpdateFormPage() {
   console.log('tables aqui:', tables)
   console.log('bunnyId aqui:', bunny)
 
+  function goToHome() {
+    navigate(pages.home);
+  }
 
   function UpdateBunnyItem(e) {
     e.preventDefault();
@@ -98,144 +101,215 @@ export default function UpdateFormPage() {
 
   return (
     <>
-      <UpdateFormPageContainer>
-        <UpdateFormPageTag onSubmit={UpdateBunnyItem}>
-        <h1>Atualize os dados do seu orelhudinho</h1>
-          <input
-            type="text"
-            autoComplete="name"
-            placeholder="Nome"
-            required
-            disabled={disable}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+      <DivHeader>
+        <LinkToHome onClick={goToHome}>
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </LinkToHome>
+        <h1>ATUALIZE O SEU ORELHUDINHO</h1>
+      </DivHeader>
 
-            <input
-            type="text"
-            autoComplete="age"
-            placeholder="Idade"
-            required
-            disabled={disable}
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-          />
+      <FormPageTag onSubmit={UpdateBunnyItem}>
+        <input
+          type="text"
+          autoComplete="name"
+          placeholder="NOME"
+          required
+          disabled={disable}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
-            <input
-            type="text"
-            autoComplete="description"
-            placeholder="Descrição"
-            required
-            disabled={disable}
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
+        <input
+          type="text"
+          autoComplete="age"
+          placeholder="IDADE"
+          required
+          disabled={disable}
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+        />
 
-            <input
-            type="url"
-            autoComplete="url"
-            placeholder="Link da imagem do coelho"
-            required
-            disabled={disable}
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-          />
+        <input
+          type="text"
+          autoComplete="description"
+          placeholder="DESCRIÇÃO"
+          required
+          disabled={disable}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
 
-{tables ? (
-<>
+        <input
+          type="url"
+          autoComplete="url"
+          placeholder="LINK DA IMAGEM DO COELHO"
+          required
+          disabled={disable}
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+        />
 
-<label>Raça:</label>
-<select
-value={selectedBreed}
-onChange={(event) => setSelectedBreed(event.target.value)}
->
-{tables.resultBreeds.map((color) => (
-  <option key={color.id} value={color.id}>
-    {color.name}
-  </option>
-))}
-</select>
+        {tables ? (
+          <>
+            <select
+              value={selectedBreed}
+              onChange={(event) => setSelectedBreed(event.target.value)}
+            >
+              {tables.resultBreeds.map((color) => (
+                <option key={color.id} value={color.id}>
+                  {color.name}
+                </option>
+              ))}
+            </select>
 
-<label>Cor do Pelo:</label>
-  <select
-    value={selectedSkinColor}
-    onChange={(event) => setSelectedSkinColor(event.target.value)}
-  >
-    {tables.resultSkinColors.map((color) => (
-      <option key={color.id} value={color.id}>
-        {color.name}
-      </option>
-    ))}
-  </select>
+            <select
+              value={selectedSkinColor}
+              onChange={(event) => setSelectedSkinColor(event.target.value)}
+            >
+              {tables.resultSkinColors.map((color) => (
+                <option key={color.id} value={color.id}>
+                  {color.name}
+                </option>
+              ))}
+            </select>
 
-  <label>Tamanho:</label>
-  <select
-    value={selectedSize}
-    onChange={(event) => setSelectedSize(event.target.value)}
-  >
-    {tables.resultSizes.map((color) => (
-      <option key={color.id} value={color.id}>
-        {color.name}
-      </option>
-    ))}
-  </select>
+            <select
+              value={selectedSize}
+              onChange={(event) => setSelectedSize(event.target.value)}
+            >
+              {tables.resultSizes.map((color) => (
+                <option key={color.id} value={color.id}>
+                  {color.name}
+                </option>
+              ))}
+            </select>
+          </>
+        ) : (
+          <p>Carregando...</p>
+        )}
 
-</>
-
-
-) : (
-  <p>Carregando...</p>
-)}
-
-
-          <div style={{display: 'flex', flexDirection: 'row'}}>
-            <label>Ativo</label>
-            <input
-            type="radio"
-            name="active"
-            value={true}
-            checked={active === true}
-            onChange={() => setActive(true)}
-            disabled={disable}
-          />
-            <label>Inativo</label>
-            <input
-            type="radio"
-            name="active"
-            value={false}
-            checked={active === false}
-            onChange={() => setActive(false)}
-            disabled={disable}
-          />
+        <ActiveDiv>
+          <div>
+            <label>STATUS:</label>
           </div>
-          
 
-          <button type="submit" disabled={disable}>
-            {disable ? (
-              <ThreeDots
-                type="ThreeDots"
-                color="#ffffff"
-                height={20}
-                width={50}
-              />
-            ) : (
-              "Registrar"
-            )}
-          </button>
-        </UpdateFormPageTag>
-      </UpdateFormPageContainer>
+          <div>
+            <label>ATIVO</label>
+            <input
+              type="radio"
+              name="active"
+              value={true}
+              checked={active === true}
+              onChange={() => setActive(true)}
+              disabled={disable}
+            />
+          </div>
+
+          <div>
+            <label>INATIVO</label>
+            <input
+              type="radio"
+              name="active"
+              value={false}
+              checked={active === false}
+              onChange={() => setActive(false)}
+              disabled={disable}
+            />
+          </div>
+        </ActiveDiv>
+
+        <button type="submit" disabled={disable}>
+          {disable ? (
+            <ThreeDots
+              type="ThreeDots"
+              color="#ffffff"
+              height={20}
+              width={50}
+            />
+          ) : (
+            "ATUALIZAR"
+          )}
+        </button>
+      </FormPageTag>
     </>
   );
 }
 
-const UpdateFormPageContainer = styled.div`
-  /* border: 3px solid red; */
+
+const DivHeader = styled.div`
+  background-color: #ff995c;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  h1 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
+    padding-right: 10px;
+    letter-spacing: 1px;
+  }
+
+  ion-icon {
+    height: 50px;
+    font-size: 35px;
+  }
 `;
 
-const UpdateFormPageTag = styled.form`
+const LinkToHome = styled.div`
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  font-size: 28px;
+  margin-right: 10px;
+`;
+
+const FormPageTag = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 500px;
+`;
+
+const ActiveDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0px 10px;
+  letter-spacing: 1px;
+  font-size: 13px;
+  background-color: #ffffff;
+  color: #b46f45;
+  margin-bottom: 50px;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+
+  input {
+    width: 22px;
+  }
 `;

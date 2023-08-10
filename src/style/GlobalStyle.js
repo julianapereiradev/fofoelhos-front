@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
         max-width: 500px;
 		height: 100vh;
 		background-color: #fff4ee;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         font-family: 'Pontano Sans', sans-serif;
     }
 

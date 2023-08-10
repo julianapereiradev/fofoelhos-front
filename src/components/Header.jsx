@@ -9,7 +9,7 @@ export default function Header() {
 
     return (
         <DivHeader>
-        <p>Nome do tutor aqui</p>
+        <p>FOFOELHOS AGENCY</p>
         <LinkLogout onClick={goToLogout}>
         <ion-icon name="log-out-outline"></ion-icon>
         </LinkLogout>
@@ -38,6 +38,8 @@ const DivHeader = styled.div`
     color: #ffffff;
     font-size: 20px;
     margin-left: 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
   }
 `;
 

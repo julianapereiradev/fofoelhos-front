@@ -45,12 +45,12 @@ const ItemImageWrapper = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
-    opacity: 0.6;
+    opacity: 1.0;
     transition: opacity 0.3s ease-in-out;
   }
 
   &:hover img {
-    opacity: 1.0;
+    opacity: 0.6;
   }
 `;
 
