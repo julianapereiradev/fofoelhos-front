@@ -31,6 +31,7 @@ export default function MyBunniesPage() {
         alert(error.response.data);
         console.log("error de getMyBunnies front:", error);
       });
+      // eslint-disable-next-line
   }, [user]);
 
   console.log("tudo de myBunnies aqui:", myBunnies);

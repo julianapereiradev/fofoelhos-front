@@ -8,7 +8,7 @@ export default function GetStarted() {
 
   return (
     <GetStartedContainer>
-      <img src={logoGetStarted} />
+      <img src={logoGetStarted} alt="Imagem do Logo" />
       <h1>Fofoelhos</h1>
       <h1>Agency</h1>
       <Space>{""}</Space>

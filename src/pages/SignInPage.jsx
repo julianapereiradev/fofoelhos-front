@@ -41,7 +41,7 @@ export default function SignInPage() {
 
   return (
       <SingInBox onSubmit={SignIn}>
-        <img src={logoGetStarted} />
+        <img src={logoGetStarted} alt="Imagem do Logo"/>
         
           <input
             type="email"

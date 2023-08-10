@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import styled from "styled-components"
 import AuthContext from "./contexts/AuthContext";
 import { pages } from "./routes/routes";
 import SignInPage from "./pages/SignInPage";

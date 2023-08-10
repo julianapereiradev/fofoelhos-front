@@ -49,7 +49,7 @@ export default function SignUpPage() {
 
   return (
         <SingUpBox onSubmit={SignUp}>
-        <img src={logoGetStarted} />
+        <img src={logoGetStarted} alt="Imagem do Logo"/>
 
           <input
             type="text"

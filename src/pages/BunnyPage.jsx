@@ -26,6 +26,7 @@ export default function BunnyPage() {
         console.log('error de getBunny front', error)
         navigate(pages.home);
       });
+      // eslint-disable-next-line
   }, [user])
 
   function redirectWhatsApp() {

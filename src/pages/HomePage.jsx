@@ -31,6 +31,7 @@ export default function HomePage() {
         alert(error.response.data);
         console.log("error de getBunnies front:", error);
       });
+      // eslint-disable-next-line
   }, [user]);
 
   console.log("tudo de bunnies aqui:", bunnies);

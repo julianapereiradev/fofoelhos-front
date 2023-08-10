@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components"
 import { pages } from "../routes/routes";
+import isPropValid from "@emotion/is-prop-valid";
 
 export default function MyBunny({ item }) {
     const navigate = useNavigate();
@@ -10,16 +11,20 @@ export default function MyBunny({ item }) {
     };    
 
     return (
-<ItemBunny onClick={() => openUrlId(item.id)}>
-<ItemImageWrapper>
-  <img src={item.url} alt="Imagens de Coelho" />
-</ItemImageWrapper>
-<ItemInfo>
-  <div><p>{item.name}</p></div>
-  <div><p>{item.active === true ? ('ativo') : ('inativo')}</p></div>
-</ItemInfo>
-</ItemBunny>
-    )
+      <ItemBunny onClick={() => openUrlId(item.id)}>
+        <ItemImageWrapper isactive={item.active.toString()}>
+          <img src={item.url} alt="Imagens de Coelho" />
+        </ItemImageWrapper>
+        <ItemInfo>
+          <div>
+            <p>{item.name}</p>
+          </div>
+          <div>
+            <p>{item.active === true ? "ativo" : "inativo"}</p>
+          </div>
+        </ItemInfo>
+      </ItemBunny>
+    );
 }
 
 
@@ -46,8 +51,8 @@ const ItemImageWrapper = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
-    opacity: 0.6;
     transition: opacity 0.3s ease-in-out;
+    opacity: ${({ isactive }) => (isactive === 'true' ? 1.0 : 0.6)};
   }
 
   &:hover img {
@@ -76,3 +81,5 @@ const ItemInfo = styled.div`
     letter-spacing: 1px;
   }
 `;
+
+ItemImageWrapper.shouldForwardProp = prop => isPropValid(prop);

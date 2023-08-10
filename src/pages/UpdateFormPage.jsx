@@ -59,6 +59,7 @@ export default function UpdateFormPage() {
         console.log('error de getBunny front', error)
         navigate(pages.home);
       });
+      // eslint-disable-next-line
   }, [user]);
 
   console.log('tables aqui:', tables)
