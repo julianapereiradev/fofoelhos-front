@@ -241,13 +241,21 @@ const DivHeader = styled.div`
     font-weight: 700;
     font-size: 18px;
     padding-right: 10px;
+    letter-spacing: 1px;
   }
 
   ion-icon {
-    /* background-color: red; */
     height: 50px;
     font-size: 35px;
   }
+`;
+
+const LinkToHome = styled.div`
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  font-size: 28px;
+  margin-right: 10px;
 `;
 
 const FormPageTag = styled.form`
@@ -261,17 +269,6 @@ const FormPageTag = styled.form`
   padding-left: 10px;
   padding-right: 10px;
   max-width: 500px;
-
-  
-`;
-
-
-const LinkToHome = styled.div`
-  color: #ffffff;
-  font-size: 14px;
-  text-decoration: none;
-  font-size: 28px;
-  margin-right: 10px;
 `;
 
 const ActiveDiv = styled.div`
