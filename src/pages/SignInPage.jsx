@@ -106,7 +106,7 @@ export const LinkToSignUp = styled(Link)`
  color:  #ff995c;
  font-Size: 14px;
  text-decoration: none;
- font-size: 18px;
+ font-size: 13px;
  border: 2px solid #ff995c;
  width: 100%;
  height: 45px;

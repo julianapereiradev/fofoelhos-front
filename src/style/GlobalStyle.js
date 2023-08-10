@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
         color: #FFFFFF;
         height: 45px;
 		width: 100%;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 700;
         letter-spacing: 1px;
         box-shadow: 1px 10px 32px rgba(255,153,92,0.86);
@@ -43,27 +43,60 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 20px;
 		margin-bottom: 10px;
         color: #b46f45;
-        font-size: 16px;
+        font-size: 13px;
         letter-spacing: 1px;
+        padding-left: 10px;
+        font-weight: 700;
+        accent-color: #b46f45;
         
         &:focus {
         outline: none;
         border: 1px solid #b46f45;
         font-family: 'Pontano Sans', sans-serif;
         color: #b46f45;
-        font-size: 16px;
+        font-size: 13px;
         letter-spacing: 1px;
+        padding-left: 10px;
+        font-weight: 700;
     }
 
 		&::placeholder {
 			font-family: 'Pontano Sans', sans-serif;
 			color: #b46f45;
-            font-size: 12px;
-            letter-spacing: 2px;
+            font-size: 13px;
+            letter-spacing: 1px;
             padding-left: 10px;
+            font-weight: 400;
 		}	
 	}
 
+    select {
+        width: 100%;
+        height: 50px;
+        border: none;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        color: #b46f45;
+        font-size: 13px;
+        letter-spacing: 2px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        font-weight: 400;
+
+        &:focus {
+        outline: none;
+        border: 1px solid #b46f45;
+        font-family: 'Pontano Sans', sans-serif;
+        color: #b46f45;
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+    }
+
+    ion-icon {
+       cursor: pointer;
+    }
 `;
 
 export default GlobalStyle;
