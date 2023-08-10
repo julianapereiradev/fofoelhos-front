@@ -1,16 +1,32 @@
+import axios from "axios";
 import styled from "styled-components";
+import { headersAuth, pages, requisitions } from "../routes/routes";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../contexts/AuthContext";
 
 export default function Header() {
+  const navigate = useNavigate();
+  const { user, setUser} = useContext(AuthContext);
 
-  function goToLogout() {
-    // navigate(pages.home);
-    alert("Fazer o logout aqui")
+
+  async function logout() {
+    try {
+      await axios.delete(requisitions.logout, headersAuth(user.token));
+    } catch (error) {
+      alert(error);
+      console.log('Erro ao fazer logout', error)
+    }
+
+    localStorage.removeItem("user");
+    setUser(0);
+    navigate(pages.signIn);
   }
 
     return (
         <DivHeader>
         <p>FOFOELHOS AGENCY</p>
-        <LinkLogout onClick={goToLogout}>
+        <LinkLogout onClick={() => logout()}>
         <ion-icon name="log-out-outline"></ion-icon>
         </LinkLogout>
       </DivHeader>

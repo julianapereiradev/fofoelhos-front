@@ -20,7 +20,8 @@ export const requisitions = {
     getBunny: API_URL + '/bunny/',
     getTables: API_URL + '/getTables',
     getMyBunnies: API_URL + '/myBunnies',
-    updateBunny: API_URL + '/bunny/'
+    updateBunny: API_URL + '/bunny/',
+    logout: API_URL + '/logout',
 }
 
 export function headersAuth(token) {
