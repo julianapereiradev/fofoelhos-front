@@ -61,7 +61,7 @@ export default function HomePage() {
 
 
 const HomePageContainer = styled.div`
-  margin-top: 70px;
+  margin-top: 80px;
   margin-bottom: 70px;
   padding-top: 50px;
   padding-bottom: 90px;
@@ -73,12 +73,5 @@ const BunnyItemHomeBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
-  p {
-    font-family: "Lexend Deca";
-    font-size: 18px;
-    color: #666666;
-    line-height: 22px;
-  }
+  padding: 10px;
 `;

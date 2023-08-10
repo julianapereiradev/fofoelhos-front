@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { pages } from "../routes/routes";
 import { useNavigate } from "react-router-dom";
 
@@ -23,15 +22,15 @@ export default function Footer() {
       <DivFooter>
 
         <LinkFooter onClick={goToHomePage}>
-          Home
+        <ion-icon name="home"></ion-icon>
         </LinkFooter>
 
         <LinkFooter onClick={goToFormPage}>
-         Adicionar
+        <ion-icon name="add-circle"></ion-icon>     
         </LinkFooter>
 
         <LinkFooter onClick={goToFMyBunniesPage}>
-          Meus Coelhos
+        <ion-icon name="heart"></ion-icon>
         </LinkFooter>
         
       </DivFooter>
@@ -39,7 +38,7 @@ export default function Footer() {
 }
 
 const DivFooter = styled.div`
-  background-color: #0044ff;
+  background-color: #ffffff;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -50,19 +49,13 @@ const DivFooter = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 `;
 
-const LinkFooter = styled.button`
- color: #ffffff;
+const LinkFooter = styled.div`
+ color: #ff995c;
  font-Size: 14px;
  text-decoration: none;
- font-size: 18px;
+ font-size: 28px;
 `;
-
-
-// export const LinkFooter = styled(Link)`
-//  color: #ffffff;
-//  font-Size: 14px;
-//  text-decoration: none;
-//  font-size: 18px;
-// `
