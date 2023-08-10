@@ -45,12 +45,7 @@ export default function MyBunniesPage() {
           {myBunnies ? (
             myBunnies.map((item) => <MyBunny key={item.id} item={item} />)
           ) : (
-            <ThreeDots
-              type="ThreeDots"
-              color="#ffffff"
-              height={90}
-              width={150}
-            />
+            <h1>Você ainda não tem coelhos cadastrados!</h1>
           )}
         </BunnyItemHomeBox>
       </HomePageContainer>
@@ -75,4 +70,12 @@ const BunnyItemHomeBox = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 10px;
+
+  h1 {
+    color: #8a8a8a;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+    
+  }
 `;

@@ -1,11 +1,11 @@
-import styled from "styled-components"
-import { useContext, useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
-import axios from "axios"
-import { ThreeDots } from "react-loader-spinner"
-import AuthContext from "../contexts/AuthContext"
-import { validateUser } from "../constants/functions"
-import { headersAuth, pages, requisitions } from "../routes/routes"
+import styled from "styled-components";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { ThreeDots } from "react-loader-spinner";
+import AuthContext from "../contexts/AuthContext";
+import { validateUser } from "../constants/functions";
+import { headersAuth, pages, requisitions } from "../routes/routes";
 
 export default function BunnyPage() {
   const { user, setUser } = useContext(AuthContext);
@@ -16,27 +16,32 @@ export default function BunnyPage() {
   useEffect(() => {
     validateUser(user, setUser);
 
-    axios.get(requisitions.getBunny + id, headersAuth(user.token))
-      .then(resp => {
-        setBunny(resp.data)
-        console.log('resp de getBunny front', resp)
-    })
-      .catch(error => {
+    axios
+      .get(requisitions.getBunny + id, headersAuth(user.token))
+      .then((resp) => {
+        setBunny(resp.data);
+        console.log("resp de getBunny front", resp);
+      })
+      .catch((error) => {
         alert(error.response.data);
-        console.log('error de getBunny front', error)
+        console.log("error de getBunny front", error);
         navigate(pages.home);
       });
-      // eslint-disable-next-line
-  }, [user])
+    // eslint-disable-next-line
+  }, [user]);
 
   function redirectWhatsApp() {
-    alert("Redirecionar para o WhatApp ao clicar")
+    console.log(bunny.phone);
+    const resposta = `Olá, segue as informações abaixo do orelhudinho que você contratou: \n- Nome: ${bunny.name} \n - Idade: ${bunny.age}  \n - Raça: ${bunny.breed}  \n - Cor: ${bunny.skinColor}  \n - Tamanho: ${bunny.size}  \n - Tutor: ${bunny.dono}`;
+
+    const texto = window.encodeURIComponent(resposta);
+
+    window.open(`https://wa.me/55${bunny.phone}?text=${texto}`);
   }
 
   function goToHome() {
     navigate(pages.home);
   }
-
 
   return (
     <>
@@ -52,24 +57,51 @@ export default function BunnyPage() {
           <>
             <img src={bunny.url} alt="Imagem do Coelho" />
             <DivForInfos>
-                <span><strong>NOME: </strong>{bunny.name}</span>
-                <span><strong>DESCRIÇÃO: </strong>{bunny.description}</span>
-                <span><strong>IDADE: </strong>{bunny.age}</span>
-                <span><strong>DONO: </strong>{bunny.dono}</span>
-                <span><strong>TELEFONE: </strong>{bunny.phone}</span>
-                <span><strong>RAÇA: </strong>{bunny.breed}</span>
-                <span><strong>COR: </strong>{bunny.skinColor}</span>
-                <span><strong>TAMANHO: </strong>{bunny.size}</span>
-                <span><strong>STATUS: </strong>{bunny.active === true ? ("Ativo") : ("Inativo")}</span>
+              <span>
+                <strong>NOME: </strong>
+                {bunny.name}
+              </span>
+              <span>
+                <strong>DESCRIÇÃO: </strong>
+                {bunny.description}
+              </span>
+              <span>
+                <strong>IDADE: </strong>
+                {bunny.age}
+              </span>
+              <span>
+                <strong>DONO: </strong>
+                {bunny.dono}
+              </span>
+              <span>
+                <strong>TELEFONE: </strong>
+                {bunny.phone}
+              </span>
+              <span>
+                <strong>RAÇA: </strong>
+                {bunny.breed}
+              </span>
+              <span>
+                <strong>COR: </strong>
+                {bunny.skinColor}
+              </span>
+              <span>
+                <strong>TAMANHO: </strong>
+                {bunny.size}
+              </span>
+              <span>
+                <strong>STATUS: </strong>
+                {bunny.active === true ? "Ativo" : "Inativo"}
+              </span>
               <button onClick={redirectWhatsApp}>CONTRATAR</button>
-              </DivForInfos>
-            </>
+            </DivForInfos>
+          </>
         ) : (
           <ThreeDots type="ThreeDots" color="#ffffff" height={90} width={150} />
         )}
       </BunnyContainer>
     </>
-  )
+  );
 }
 
 const DivHeader = styled.div`
@@ -123,9 +155,9 @@ const BunnyContainer = styled.form`
     width: 100%;
     object-fit: cover;
   }
-`
+`;
 const DivForInfos = styled.div`
- display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
