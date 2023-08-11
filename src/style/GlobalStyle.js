@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 1px;
-        box-shadow: 1px 10px 32px rgba(186, 186, 231, 0.86);;
+        box-shadow: 1px 10px 32px rgba(186, 186, 231, 0.86);
         font-family: 'Montserrat', sans-serif;
         
         &:hover {
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
 		height: 50px;
 		width: 100%;
-		border: none;
+		border: 2px solid #ededf1;
 		border-radius: 10px;
 		font-size: 20px;
 		margin-bottom: 10px;
@@ -51,7 +51,6 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 10px;
         font-weight: 700;
         accent-color: #8a8a8a;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
         
         &:focus {
         outline: none;
@@ -79,7 +78,6 @@ const GlobalStyle = createGlobalStyle`
     select {
         width: 100%;
         height: 50px;
-        border: none;
         border-radius: 10px;
         background-color: #FFFFFF;
         color: #8a8a8a;
@@ -88,6 +86,8 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 10px;
         margin-bottom: 10px;
         font-weight: 400;
+        border: 2px solid #ededf1;
+        
 
         &:focus {
         outline: none;
@@ -95,7 +95,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Sacramento', cursive;
         font-family: 'Montserrat', sans-serif;
         color: #8a8a8a;
-        font-size: 13px;
+        font-size: 14px;
         letter-spacing: 1px;
         font-weight: 700;
     }

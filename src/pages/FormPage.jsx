@@ -89,14 +89,13 @@ if (!tables) {
  return <Loading />
 }
 
-
   return (
     <>
       <DivHeader>
         <LinkToHome onClick={goToHome}>
           <ion-icon name="chevron-back-outline"></ion-icon>
         </LinkToHome>
-        <h1>REGISTRE O SEU COELHINHO</h1>
+        <h1>Registre o seu coelhinho</h1>
       </DivHeader>
 
       <FormPageTag onSubmit={PostBunnyItem}>
@@ -245,16 +244,12 @@ const DivHeader = styled.div`
   border-bottom-right-radius: 5px;
 
   h1 {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 18px;
-    padding-right: 10px;
-    letter-spacing: 1px;
-  }
-
-  ion-icon {
-    height: 50px;
+    font-family: 'Sacramento', cursive;
+    color:#e7e7e7;
     font-size: 30px;
+    margin-right: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
   }
 `;
 

@@ -134,7 +134,7 @@ export default function UpdateFormPage() {
         <LinkToHome onClick={goToMyBunnies}>
           <ion-icon name="chevron-back-outline"></ion-icon>
         </LinkToHome>
-        <h1>DADOS DO COELHINHO</h1>
+        <h1>Atualizar dados</h1>
       </DivHeader>
 
       <FormPageTag onSubmit={UpdateBunnyItem}>
@@ -283,16 +283,12 @@ const DivHeader = styled.div`
   border-bottom-right-radius: 5px;
 
   h1 {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 18px;
-    padding-right: 10px;
+    font-family: 'Sacramento', cursive;
+    color:#e7e7e7;
+    font-size: 30px;
+    margin-right: 10px;
     letter-spacing: 1px;
-  }
-
-  ion-icon {
-    height: 50px;
-    font-size: 35px;
+    font-weight: 600;
   }
 `;
 
@@ -303,6 +299,7 @@ const LinkToHome = styled.div`
   font-size: 28px;
   margin-right: 10px;
 `;
+
 
 const FormPageTag = styled.form`
   display: flex;

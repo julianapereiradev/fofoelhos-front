@@ -12,6 +12,7 @@ import MyBunniesPage from "./pages/MyBunniesPage";
 import UpdateFormPage from "./pages/UpdateFormPage";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import PageNotFound from "./components/PageNotFound";
 
 function ScrollToTopOnPageChange() {
   const { pathname } = useLocation();
@@ -40,6 +41,7 @@ function App() {
           <Route path={pages.bunnyId + ':id'} element={<BunnyPage />} />
           <Route path={pages.myBunnies} element={<MyBunniesPage />} />
           <Route path={pages.updateBunny + ':id'} element={<UpdateFormPage />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         </BrowserRouter>
       </AuthContext.Provider>

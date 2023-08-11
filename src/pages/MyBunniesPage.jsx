@@ -55,13 +55,14 @@ export default function MyBunniesPage() {
   return (
     <>
       <DivHeader>
-        <p>MEUS FILHOTES</p>
+        <p>Meus Filhotes</p>
         <LinkLogout onClick={() => logout()}>
           <ion-icon name="chevron-forward-outline"></ion-icon>{" "}
         </LinkLogout>
       </DivHeader>
 
       <HomePageContainer>
+        <h4>Clique abaixo em algum para editar</h4>
         <BunnyItemHomeBox>
           {myBunnies ? (
             myBunnies.map((item) => <MyBunny key={item.id} item={item} />)
@@ -77,7 +78,7 @@ export default function MyBunniesPage() {
 }
 
 const DivHeader = styled.div`
-  background-color: #FFFFFF;
+  background-color: #babae7;
   position: fixed;
   top: 0;
   left: 0;
@@ -93,17 +94,17 @@ const DivHeader = styled.div`
   border-bottom-right-radius: 5px;
 
   p {
-    font-family: "Pontano Sans", sans-serif;
-    color:#babae7;
-    font-size: 20px;
+    font-family: "Sacramento", cursive;
+    color: #e7e7e7;
+    font-size: 30px;
     margin-left: 10px;
     letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: 600;
   }
 `;
 
 const LinkLogout = styled.div`
-  color:#babae7;
+  color: #e7e7e7;
   font-size: 14px;
   text-decoration: none;
   font-size: 28px;
@@ -111,12 +112,22 @@ const LinkLogout = styled.div`
 `;
 
 const HomePageContainer = styled.div`
-  margin-top: 80px;
+  margin-top: 90px;
   margin-bottom: 70px;
   padding-bottom: 90px;
   padding-left: 10px;
   padding-right: 10px;
   max-width: 500px;
+
+  h4 {
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #8a8a8a;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    font-family: "Montserrat", sans-serif;
+  }
 `;
 
 const BunnyItemHomeBox = styled.div`
@@ -126,9 +137,12 @@ const BunnyItemHomeBox = styled.div`
   padding: 10px;
 
   h1 {
-    color: #8a8a8a;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: #8a8a8a;
+    letter-spacing: 1px;
     text-align: center;
+    font-family: "Montserrat", sans-serif;
   }
 `;
