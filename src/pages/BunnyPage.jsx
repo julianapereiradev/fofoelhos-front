@@ -58,25 +58,62 @@ export default function BunnyPage() {
         </LinkToHome>
             <img src={bunny.url} alt="Imagem do Coelho" />
             <DivForInfos>
-              <span>
-                <strong>NOME: </strong>
+<FirstDiv>
+  <h1>{bunny.name}</h1>
+  <h2>{bunny.age}</h2>
+</FirstDiv>
+
+<SecondDiv>
+<ion-icon name="checkmark-done-outline"></ion-icon>
+<p>{bunny.breed}</p>
+</SecondDiv>
+
+<ThirdDiv>
+  <div>
+  <p>Cor</p>
+    <h3>{bunny.skinColor}</h3>
+  </div>
+
+  <div>
+  <p>Tamanho</p>
+    <h3>{bunny.size}</h3>
+  </div>
+</ThirdDiv>
+
+
+<FourthDiv>
+
+<FourthSubDiv>
+<ion-icon name="person-circle-outline"></ion-icon>
+<div>
+  <h2>{bunny.dono}</h2>
+<p>Tutor(a)</p>
+</div>
+</FourthSubDiv>
+
+<ion-icon name="call" onClick={redirectWhatsApp}></ion-icon>
+</FourthDiv>
+
+<FifthDiv>
+<h2>DESCRIÇÃO:</h2>
+<p>{bunny.description}</p>
+</FifthDiv>
+
+
+              {/* <span>
                 {bunny.name}
+              </span>
+              <span>
+                {bunny.age}
               </span>
               <span>
                 <strong>DESCRIÇÃO: </strong>
                 {bunny.description}
               </span>
-              <span>
-                <strong>IDADE: </strong>
-                {bunny.age}
-              </span>
+
               <span>
                 <strong>DONO: </strong>
                 {bunny.dono}
-              </span>
-              <span>
-                <strong>TELEFONE: </strong>
-                {bunny.phone}
               </span>
               <span>
                 <strong>RAÇA: </strong>
@@ -89,11 +126,8 @@ export default function BunnyPage() {
               <span>
                 <strong>TAMANHO: </strong>
                 {bunny.size}
-              </span>
-              <span>
-                <strong>STATUS: </strong>
-                {bunny.active === true ? "Ativo" : "Inativo"}
-              </span>
+              </span> */}
+            
               <button onClick={redirectWhatsApp}>CONTRATAR</button>
             </DivForInfos>
           </>
@@ -137,21 +171,21 @@ const BunnyContainer = styled.form`
   img {
     width: 100%;
     object-fit: cover;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 `;
+
 const DivForInfos = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  border-radius: 25px;
-  background-color: #fff4ee;
-  position: relative;
-  top: -20px;
-  z-index: 2;
+  background-color: #ffffff;
   padding: 20px;
+  color: #8a8a8a;
 
-  span {
+  /* span {
     margin: 10px;
     letter-spacing: 1px;
     font-size: 20px;
@@ -164,9 +198,130 @@ const DivForInfos = styled.div`
     letter-spacing: 1px;
     font-size: 16px;
     color: #8a8a8a;
-  }
+  } */
 
   button {
     margin-top: 30px;
   }
+`;
+
+const FirstDiv = styled.div`
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 15px;
+
+ h1 {
+  font-size: 60px;
+  font-family: 'Sacramento', cursive;
+  margin-right: 10px;
+  text-align: left;
+ }
+
+ h2 {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+ }
+`;
+
+const SecondDiv = styled.div`
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+
+ ion-icon {
+  font-size: 22px;
+  margin-right: 5px;
+ }
+`;
+
+const ThirdDiv = styled.div`
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-between;
+ margin-top: 30px;
+
+ div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ebebeb;
+  width: 145px;
+  height: 80px;
+  text-align: center;
+  border-radius: 10px;
+
+  p {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+ }
+`;
+
+const FourthDiv = styled.div`
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-between;
+ margin-top: 20px;
+ border-radius: 10px;
+ box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+ ion-icon {
+  color: #babae7;
+  font-size: 30px;
+  padding-right: 3px;
+ }
+
+`;
+
+const FourthSubDiv = styled.div`
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+
+ ion-icon {
+  font-size: 70px;
+  margin-right: 5px;
+  color: #cac9c9
+ }
+
+ div {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  p {
+    margin-top: 3px;
+    font-size: 12px;
+  }
+ }
+`;
+
+const FifthDiv = styled.div`
+ margin-top: 30px;
+
+ h2 {
+  font-weight: 700;
+  letter-spacing: 2px;
+ }
+
+ p {
+  padding-left: 10px;
+  margin-top: 5px;
+ }
+
 `;
