@@ -134,7 +134,7 @@ export default function UpdateFormPage() {
         <LinkToHome onClick={goToMyBunnies}>
           <ion-icon name="chevron-back-outline"></ion-icon>
         </LinkToHome>
-        <h1>ATUALIZE O SEU ORELHUDINHO</h1>
+        <h1>DADOS DO COELHINHO</h1>
       </DivHeader>
 
       <FormPageTag onSubmit={UpdateBunnyItem}>

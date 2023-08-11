@@ -10,31 +10,37 @@ export default function BunnyHome({ item }) {
   }
 
   return (
-    <ItemBunny onClick={() => openUrlId(item.id)}>
-      <ItemImageWrapper>
-        <img src={item.url} alt="Imagens de Coelho" />
-      </ItemImageWrapper>
-      <ItemInfo>
-        <div><p>{item.name}</p></div>
-        <div><p>{item.age}</p></div>
-      </ItemInfo>
-    </ItemBunny>
+    <ItemContainer>
+      <ItemBunny onClick={() => openUrlId(item.id)}>
+        <ItemImageWrapper>
+          <img src={item.url} alt="Imagens de Coelho" />
+        </ItemImageWrapper>
+      </ItemBunny>
+      <TextBox>
+        <p><span>{item.name}</span></p>
+        <p>{item.age}</p>
+      </TextBox>
+    </ItemContainer>
   );
 }
 
-const ItemBunny = styled.div`
-  border: none;
-  width: 100%;
-  height: 270px;
+const ItemContainer = styled.div`
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
   border-radius: 10px;
   margin-bottom: 20px;
+`;
+
+const ItemBunny = styled.div`
+ border-top-right-radius: 10px;
+ border-top-left-radius: 10px;
+  width: 100%;
+  height: 270px;
   display: flex;
   flex-direction: column;
-  position: relative;
+  justify-content: center;
   overflow: hidden;
-  background-color: rgba(255, 153, 92, 0.5);
-  cursor: pointer;
-
+  box-shadow: rgba(150, 146, 146, 0.05) 0px 6px 24px 0px, rgba(150, 146, 146, 0.08) 0px 0px 0px 1px;
   &:hover {
     background: none;
   }
@@ -45,7 +51,7 @@ const ItemImageWrapper = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
-    opacity: 1.0;
+    opacity: 1;
     transition: opacity 0.3s ease-in-out;
   }
 
@@ -54,24 +60,19 @@ const ItemImageWrapper = styled.div`
   }
 `;
 
-const ItemInfo = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  padding: 25px 10px;
-  background-color: rgba(255, 153, 92, 0.5);;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+const TextBox = styled.div`
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+ p {
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+  color: #b46f45;
+ }
 
-  p {
-    font-family: 'Pontano Sans', sans-serif;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
+ span {
+  font-weight: 700;
+  font-size: 20px;
+ }
 `;

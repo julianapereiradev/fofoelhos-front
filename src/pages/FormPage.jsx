@@ -96,7 +96,7 @@ if (!tables) {
         <LinkToHome onClick={goToHome}>
           <ion-icon name="chevron-back-outline"></ion-icon>
         </LinkToHome>
-        <h1>REGISTRE O SEU ORELHUDINHO</h1>
+        <h1>REGISTRE O SEU COELHINHO</h1>
       </DivHeader>
 
       <FormPageTag onSubmit={PostBunnyItem}>

@@ -77,12 +77,12 @@ export default function MyBunniesPage() {
 }
 
 const DivHeader = styled.div`
-  background-color: #ff995c;
+  background-color: #FFFFFF;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 70px;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -94,7 +94,7 @@ const DivHeader = styled.div`
 
   p {
     font-family: "Pontano Sans", sans-serif;
-    color: #ffffff;
+    color: #ff995c;
     font-size: 20px;
     margin-left: 10px;
     letter-spacing: 1px;
@@ -103,7 +103,7 @@ const DivHeader = styled.div`
 `;
 
 const LinkLogout = styled.div`
-  color: #ffffff;
+  color: #ff995c;
   font-size: 14px;
   text-decoration: none;
   font-size: 28px;
