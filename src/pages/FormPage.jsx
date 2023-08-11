@@ -46,7 +46,6 @@ export default function FormPage() {
 
   function PostBunnyItem(e) {
     e.preventDefault();
-    setDisable(true);
 
     if (selectedBreed === "1" || selectedBreed === 1) {
       return alert("Selecione uma raça");

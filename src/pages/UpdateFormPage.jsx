@@ -8,12 +8,11 @@ import { validateUser } from "../constants/functions";
 import { headersAuth, pages, requisitions } from "../routes/routes";
 import Loading from "../components/Loading";
 
-
 export default function UpdateFormPage() {
-    const { user, setUser} = useContext(AuthContext);
-    const { id } = useParams();
+  const { user, setUser } = useContext(AuthContext);
+  const { id } = useParams();
 
-  const [tables, setTables] = useState(undefined)
+  const [tables, setTables] = useState(undefined);
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [description, setDescription] = useState("");
@@ -28,42 +27,43 @@ export default function UpdateFormPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-
     validateUser(user, setUser);
 
-    axios.get(requisitions.getTables, headersAuth(user.token))
-      .then(res => {
-        setTables(res.data)
-        console.log('res de getTables front:', res)
+    axios
+      .get(requisitions.getTables, headersAuth(user.token))
+      .then((res) => {
+        setTables(res.data);
+        console.log("res de getTables front:", res);
       })
-      .catch(error => {
+      .catch((error) => {
         alert(error.response.data);
-        console.log('error de getTables front:', error)
+        console.log("error de getTables front:", error);
       });
 
-    axios.get(requisitions.getBunny + id, headersAuth(user.token))
-      .then(resp => {
+    axios
+      .get(requisitions.getBunny + id, headersAuth(user.token))
+      .then((resp) => {
         setBunny(resp.data);
         setName(resp.data.name);
-        setAge(resp.data.age)
-        setDescription(resp.data.description)
-        setUrl(resp.data.url)
-        setSelectedBreed(resp.data.breedId)
-        setSelectedSkinColor(resp.data.skinColorId)
-        setSelectedSize(resp.data.sizeId)
-        setActive(resp.data.active)
-        console.log('resp de getBunny front', resp);
+        setAge(resp.data.age);
+        setDescription(resp.data.description);
+        setUrl(resp.data.url);
+        setSelectedBreed(resp.data.breedId);
+        setSelectedSkinColor(resp.data.skinColorId);
+        setSelectedSize(resp.data.sizeId);
+        setActive(resp.data.active);
+        console.log("resp de getBunny front", resp);
       })
-      .catch(error => {
+      .catch((error) => {
         alert(error.response.data);
-        console.log('error de getBunny front', error)
+        console.log("error de getBunny front", error);
         navigate(pages.home);
       });
-      // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [user]);
 
-  console.log('tables aqui:', tables)
-  console.log('bunnyId aqui:', bunny)
+  console.log("tables aqui:", tables);
+  console.log("bunnyId aqui:", bunny);
 
   function goToMyBunnies() {
     navigate(pages.myBunnies);
@@ -71,7 +71,18 @@ export default function UpdateFormPage() {
 
   function UpdateBunnyItem(e) {
     e.preventDefault();
-    setDisable(true);
+ 
+    if (selectedBreed === "1" || selectedBreed === 1) {
+      return alert("Selecione uma raça");
+    }
+
+    if (selectedSkinColor === "1" || selectedSkinColor === 1) {
+      return alert("Selecione uma cor de pêlo");
+    }
+
+    if (selectedSize === "1" || selectedSize === 1) {
+      return alert("Selecione um tamanho");
+    }
 
     const newBunnyUpdate = {
       name: name,
@@ -81,29 +92,42 @@ export default function UpdateFormPage() {
       skinColorId: selectedSkinColor,
       sizeId: selectedSize,
       url: url,
-      active: active
+      active: active,
     };
     setDisable(true);
 
     axios
-      .put(requisitions.updateBunny + id, newBunnyUpdate, headersAuth(user.token))
+      .put(
+        requisitions.updateBunny + id,
+        newBunnyUpdate,
+        headersAuth(user.token)
+      )
       .then((res) => {
         navigate(pages.myBunnies);
         setDisable(false);
-        console.log("res do UpdateBunnyItem na UpdateFormPage front", res)
+        console.log("res do UpdateBunnyItem na UpdateFormPage front", res);
       })
       .catch((error) => {
-        console.log('error de UpdateBunnyItem na UpdateFormPage:', error)
+        console.log("error de UpdateBunnyItem na UpdateFormPage:", error);
         alert(error.response.data);
         setDisable(false);
       });
   }
 
-  if (!tables || !bunny || !name || !age || !description || !url || !selectedBreed || !selectedSkinColor || !selectedSize || !active ) {
-    return <Loading />
-   }
+  if (
+    !tables ||
+    !bunny ||
+    !name ||
+    !age ||
+    !description ||
+    !url ||
+    !selectedBreed ||
+    !selectedSkinColor ||
+    !selectedSize
+  ) {
+    return <Loading />;
+  }
 
-  
   return (
     <>
       <DivHeader>
@@ -224,24 +248,23 @@ export default function UpdateFormPage() {
         </ActiveDiv>
 
         <button type="submit" disabled={disable}>
-        <LoadingButtonContent>
-          {disable ? (
-            <ThreeDots
-              type="ThreeDots"
-              color="#ff995c"
-              height={20}
-              width={50}
-            />
-          ) : (
-            "ATUALIZAR"
-          )}
-           </LoadingButtonContent>
+          <LoadingButtonContent>
+            {disable ? (
+              <ThreeDots
+                type="ThreeDots"
+                color="#ff995c"
+                height={20}
+                width={50}
+              />
+            ) : (
+              "ATUALIZAR"
+            )}
+          </LoadingButtonContent>
         </button>
       </FormPageTag>
     </>
   );
 }
-
 
 const DivHeader = styled.div`
   background-color: #ff995c;

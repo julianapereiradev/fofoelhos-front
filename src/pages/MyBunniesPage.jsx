@@ -30,20 +30,35 @@ export default function MyBunniesPage() {
         alert(error.response.data);
         console.log("error de getMyBunnies front:", error);
       });
-      // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [user]);
+
+  async function logout() {
+    try {
+      await axios.delete(requisitions.logout, headersAuth(user.token));
+    } catch (error) {
+      alert(error);
+      console.log("Erro ao fazer logout", error);
+    }
+
+    localStorage.removeItem("user");
+    setUser(0);
+    navigate(pages.signIn);
+  }
 
   console.log("tudo de myBunnies aqui:", myBunnies);
 
   if (!myBunnies) {
-    return <Loading />
-   }
-
+    return <Loading />;
+  }
 
   return (
     <>
-           <DivHeader>
-        <h1>MEUS FILHOTES</h1>
+      <DivHeader>
+        <p>MEUS FILHOTES</p>
+        <LinkLogout onClick={() => logout()}>
+          <ion-icon name="chevron-forward-outline"></ion-icon>{" "}
+        </LinkLogout>
       </DivHeader>
 
       <HomePageContainer>
@@ -71,19 +86,28 @@ const DivHeader = styled.div`
   text-align: center;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 1;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 
-  h1 {
+  p {
+    font-family: "Pontano Sans", sans-serif;
     color: #ffffff;
-    font-weight: 700;
-    font-size: 18px;
-    padding-right: 10px;
+    font-size: 20px;
+    margin-left: 10px;
     letter-spacing: 1px;
+    font-weight: 500;
   }
+`;
+
+const LinkLogout = styled.div`
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  font-size: 28px;
+  margin-right: 10px;
 `;
 
 const HomePageContainer = styled.div`
@@ -106,6 +130,5 @@ const BunnyItemHomeBox = styled.div`
     font-weight: 500;
     font-size: 22px;
     text-align: center;
-    
   }
 `;

@@ -27,8 +27,7 @@ export default function Header() {
         <DivHeader>
         <p>FOFOELHOS AGENCY</p>
         <LinkLogout onClick={() => logout()}>
-        <ion-icon name="log-out-outline"></ion-icon>
-        </LinkLogout>
+        <ion-icon name="chevron-forward-outline"></ion-icon>        </LinkLogout>
       </DivHeader>
     )
 }
