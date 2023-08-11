@@ -6,6 +6,7 @@ import axios from "axios";
 import { headersAuth, pages, requisitions } from "../routes/routes";
 import AuthContext from "../contexts/AuthContext";
 import { validateUser } from "../constants/functions";
+import Loading from "../components/Loading";
 
 export default function FormPage() {
   const { user, setUser } = useContext(AuthContext);
@@ -84,6 +85,11 @@ export default function FormPage() {
         setDisable(false);
       });
   }
+
+if (!tables) {
+ return <Loading />
+}
+
 
   return (
     <>
@@ -205,16 +211,18 @@ export default function FormPage() {
         </ActiveDiv>
 
         <button type="submit" disabled={disable}>
+        <LoadingButtonContent>
           {disable ? (
             <ThreeDots
               type="ThreeDots"
-              color="#ffffff"
+              color="#ff995c"
               height={20}
               width={50}
             />
           ) : (
             "REGISTRAR"
           )}
+        </LoadingButtonContent>
         </button>
       </FormPageTag>
     </>
@@ -296,4 +304,10 @@ const ActiveDiv = styled.div`
   input {
     width: 22px;
   }
+`;
+
+const LoadingButtonContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

@@ -9,6 +9,7 @@ import { validateUser } from "../constants/functions";
 import BunnyHome from "../components/BunnyHome";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -35,6 +36,11 @@ export default function HomePage() {
   }, [user]);
 
   console.log("tudo de bunnies aqui:", bunnies);
+
+  if (!bunnies) {
+    return <Loading />
+   }
+
 
   return (
     <>

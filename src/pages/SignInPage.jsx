@@ -64,16 +64,18 @@ export default function SignInPage() {
           />
 
         <button type="submit" disabled={disable}>
+        <LoadingButtonContent>
           {disable ? (
             <ThreeDots
               type="ThreeDots"
-              color="#ffffff"
+              color="#ff995c"
               height={20}
               width={50}
             />
           ) : (
             "ENTRAR"
           )}
+           </LoadingButtonContent>
         </button>
         <LinkToSignUp to={`/cadastro`}>PRIMEIRA VEZ? CLIQUE AQUI</LinkToSignUp>
       </SingInBox>
@@ -120,3 +122,9 @@ export const LinkToSignUp = styled(Link)`
  font-weight: 700;
  letter-spacing: 1px;
 `
+
+const LoadingButtonContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

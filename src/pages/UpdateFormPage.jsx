@@ -6,6 +6,7 @@ import axios from "axios";
 import AuthContext from "../contexts/AuthContext";
 import { validateUser } from "../constants/functions";
 import { headersAuth, pages, requisitions } from "../routes/routes";
+import Loading from "../components/Loading";
 
 
 export default function UpdateFormPage() {
@@ -39,7 +40,6 @@ export default function UpdateFormPage() {
         alert(error.response.data);
         console.log('error de getTables front:', error)
       });
-
 
     axios.get(requisitions.getBunny + id, headersAuth(user.token))
       .then(resp => {
@@ -99,6 +99,11 @@ export default function UpdateFormPage() {
       });
   }
 
+  if (!tables || !bunny || !name || !age || !description || !url || !selectedBreed || !selectedSkinColor || !selectedSize || !active ) {
+    return <Loading />
+   }
+
+  
   return (
     <>
       <DivHeader>
@@ -219,16 +224,18 @@ export default function UpdateFormPage() {
         </ActiveDiv>
 
         <button type="submit" disabled={disable}>
+        <LoadingButtonContent>
           {disable ? (
             <ThreeDots
               type="ThreeDots"
-              color="#ffffff"
+              color="#ff995c"
               height={20}
               width={50}
             />
           ) : (
             "ATUALIZAR"
           )}
+           </LoadingButtonContent>
         </button>
       </FormPageTag>
     </>
@@ -311,4 +318,10 @@ const ActiveDiv = styled.div`
   input {
     width: 22px;
   }
+`;
+
+const LoadingButtonContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

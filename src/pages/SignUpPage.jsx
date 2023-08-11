@@ -108,16 +108,18 @@ export default function SignUpPage() {
           />
       
         <button type="submit" disabled={disable}>
+        <LoadingButtonContent>
           {disable ? (
             <ThreeDots
               type="ThreeDots"
-              color="#ffffff"
+              color="#ff995c"
               height={20}
               width={50}
             />
           ) : (
             "CADASTRAR"
           )}
+          </LoadingButtonContent>
         </button>
         <LinkToSignIn to={`/login`}>JÁ TEM CADASTRO? CLIQUE AQUI</LinkToSignIn>
         </SingUpBox>
@@ -163,3 +165,9 @@ export const LinkToSignIn = styled(Link)`
  font-weight: 700;
  letter-spacing: 1px;
 `
+
+const LoadingButtonContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

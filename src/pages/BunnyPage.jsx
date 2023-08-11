@@ -6,6 +6,7 @@ import { ThreeDots } from "react-loader-spinner";
 import AuthContext from "../contexts/AuthContext";
 import { validateUser } from "../constants/functions";
 import { headersAuth, pages, requisitions } from "../routes/routes";
+import Loading from "../components/Loading";
 
 export default function BunnyPage() {
   const { user, setUser } = useContext(AuthContext);
@@ -42,6 +43,10 @@ export default function BunnyPage() {
   function goToHome() {
     navigate(pages.home);
   }
+
+  if (!bunny) {
+    return <Loading />
+   }
 
   return (
     <>
@@ -93,7 +98,7 @@ export default function BunnyPage() {
             </DivForInfos>
           </>
         ) : (
-          <ThreeDots type="ThreeDots" color="#ffffff" height={90} width={150} />
+          <ThreeDots type="ThreeDots" color="#ff995c" height={90} width={150} />
         )}
       </BunnyContainer>
     </>

@@ -6,8 +6,8 @@ import AuthContext from "../contexts/AuthContext";
 import { validateUser } from "../constants/functions";
 import { headersAuth, pages, requisitions } from "../routes/routes";
 import MyBunny from "../components/MyBunny";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 export default function MyBunniesPage() {
   const navigate = useNavigate();
@@ -34,6 +34,11 @@ export default function MyBunniesPage() {
   }, [user]);
 
   console.log("tudo de myBunnies aqui:", myBunnies);
+
+  if (!myBunnies) {
+    return <Loading />
+   }
+
 
   return (
     <>
