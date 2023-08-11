@@ -49,8 +49,8 @@ const DivFooter = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 `;
 
 const LinkFooter = styled.div`

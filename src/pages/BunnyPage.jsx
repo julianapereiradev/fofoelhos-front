@@ -45,16 +45,12 @@ export default function BunnyPage() {
 
   return (
     <>
-      <DivHeader>
-        <LinkToHome onClick={goToHome}>
-          <ion-icon name="chevron-back-outline"></ion-icon>
-        </LinkToHome>
-        <h1>INFORMAÇÕES</h1>
-      </DivHeader>
-
       <BunnyContainer>
         {bunny ? (
           <>
+            <LinkToHome onClick={goToHome}>
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </LinkToHome>
             <img src={bunny.url} alt="Imagem do Coelho" />
             <DivForInfos>
               <span>
@@ -104,50 +100,33 @@ export default function BunnyPage() {
   );
 }
 
-const DivHeader = styled.div`
-  background-color: #ff995c;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-
-  h1 {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 18px;
-    padding-right: 10px;
-    letter-spacing: 1px;
-  }
+const LinkToHome = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
 
   ion-icon {
-    height: 50px;
-    font-size: 35px;
+    font-size: 22px;
+    color: #ffffff;
   }
-`;
 
-const LinkToHome = styled.div`
-  color: #ffffff;
-  font-size: 14px;
-  text-decoration: none;
-  font-size: 28px;
-  margin-right: 10px;
+  /* Estilos para criar o círculo */
+  background-color: #ff995c;
+  width: 35px;
+  height: 35px; 
+  border-radius: 50%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
 `;
 
 const BunnyContainer = styled.form`
+ position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
   max-width: 500px;
 
   img {

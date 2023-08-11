@@ -65,8 +65,8 @@ export default function UpdateFormPage() {
   console.log('tables aqui:', tables)
   console.log('bunnyId aqui:', bunny)
 
-  function goToHome() {
-    navigate(pages.home);
+  function goToMyBunnies() {
+    navigate(pages.myBunnies);
   }
 
   function UpdateBunnyItem(e) {
@@ -102,7 +102,7 @@ export default function UpdateFormPage() {
   return (
     <>
       <DivHeader>
-        <LinkToHome onClick={goToHome}>
+        <LinkToHome onClick={goToMyBunnies}>
           <ion-icon name="chevron-back-outline"></ion-icon>
         </LinkToHome>
         <h1>ATUALIZE O SEU ORELHUDINHO</h1>

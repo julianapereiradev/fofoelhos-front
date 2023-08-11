@@ -247,7 +247,7 @@ const DivHeader = styled.div`
 
   ion-icon {
     height: 50px;
-    font-size: 35px;
+    font-size: 30px;
   }
 `;
 

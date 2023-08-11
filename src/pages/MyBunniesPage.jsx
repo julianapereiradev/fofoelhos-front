@@ -37,7 +37,9 @@ export default function MyBunniesPage() {
 
   return (
     <>
-      <Header />
+           <DivHeader>
+        <h1>MEUS FILHOTES</h1>
+      </DivHeader>
 
       <HomePageContainer>
         <BunnyItemHomeBox>
@@ -53,6 +55,31 @@ export default function MyBunniesPage() {
     </>
   );
 }
+
+const DivHeader = styled.div`
+  background-color: #ff995c;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  h1 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
+    padding-right: 10px;
+    letter-spacing: 1px;
+  }
+`;
 
 const HomePageContainer = styled.div`
   margin-top: 80px;

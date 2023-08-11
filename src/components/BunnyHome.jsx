@@ -27,12 +27,12 @@ const ItemBunny = styled.div`
   width: 100%;
   height: 270px;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: rgba(255, 153, 92, 0.5);
   cursor: pointer;
 
   &:hover {
@@ -63,13 +63,13 @@ const ItemInfo = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 25px 10px;
-  background-color: #FFFFFF;
+  background-color: rgba(255, 153, 92, 0.5);;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
   p {
     font-family: 'Pontano Sans', sans-serif;
-    color: #ff995c;
+    color: #ffffff;
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 1px;
