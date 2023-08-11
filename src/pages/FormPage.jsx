@@ -119,24 +119,24 @@ if (!tables) {
           onChange={(e) => setAge(e.target.value)}
         />
 
-        <input
-          type="text"
-          autoComplete="description"
-          placeholder="DESCRIÇÃO"
-          required
-          disabled={disable}
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+        <textarea 
+        type="text"
+        autoComplete="description"
+        placeholder="DESCRIÇÃO"
+        required
+        disabled={disable}
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
         />
 
-        <input
-          type="url"
-          autoComplete="url"
-          placeholder="LINK DA IMAGEM DO COELHO"
-          required
-          disabled={disable}
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
+        <textarea
+         type="url"
+         autoComplete="url"
+         placeholder="LINK DA IMAGEM DO COELHO"
+         required
+         disabled={disable}
+         value={url}
+         onChange={(e) => setUrl(e.target.value)}
         />
 
         {tables ? (

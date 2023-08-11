@@ -75,6 +75,45 @@ const GlobalStyle = createGlobalStyle`
 		}	
 	}
 
+    textarea {
+        font-family: 'Sacramento', cursive;
+        font-family: 'Montserrat', sans-serif;
+		height: 100px;
+		width: 100%;
+		border: 2px solid #ededf1;
+		border-radius: 10px;
+		font-size: 20px;
+		margin-bottom: 10px;
+        color: #8a8a8a;
+        font-size: 13px;
+        letter-spacing: 1px;
+        padding-left: 10px;
+        font-weight: 700;
+        accent-color: #8a8a8a;
+        
+        &:focus {
+        outline: none;
+        border: 1px solid #8a8a8a;
+        font-family: 'Sacramento', cursive;
+        font-family: 'Montserrat', sans-serif;
+        color: #8a8a8a;
+        font-size: 13px;
+        letter-spacing: 1px;
+        padding-left: 10px;
+        font-weight: 700;
+    }
+
+		&::placeholder {
+            font-family: 'Sacramento', cursive;
+        font-family: 'Montserrat', sans-serif;
+			color: #8a8a8a;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding-left: 10px;
+            font-weight: 400;
+		}	
+	}
+
     select {
         width: 100%;
         height: 50px;
