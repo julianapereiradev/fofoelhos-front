@@ -39,15 +39,15 @@ const DivHeader = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 60px;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 
   p {
     font-family: 'Pontano Sans', sans-serif;

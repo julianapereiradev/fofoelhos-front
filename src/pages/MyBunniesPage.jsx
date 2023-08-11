@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { ThreeDots } from "react-loader-spinner";
 import AuthContext from "../contexts/AuthContext";
 import { validateUser } from "../constants/functions";
 import { headersAuth, pages, requisitions } from "../routes/routes";
@@ -58,7 +57,6 @@ export default function MyBunniesPage() {
 const HomePageContainer = styled.div`
   margin-top: 80px;
   margin-bottom: 70px;
-  padding-top: 50px;
   padding-bottom: 90px;
   padding-left: 10px;
   padding-right: 10px;

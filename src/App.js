@@ -10,6 +10,18 @@ import BunnyPage from "./pages/BunnyPage";
 import FormPage from "./pages/FormPage";
 import MyBunniesPage from "./pages/MyBunniesPage";
 import UpdateFormPage from "./pages/UpdateFormPage";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+function ScrollToTopOnPageChange() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const [user, setUser] = useState(0)
@@ -18,6 +30,7 @@ function App() {
    
       <AuthContext.Provider value={{user, setUser}}>
         <BrowserRouter>
+        <ScrollToTopOnPageChange />
         <Routes>
           <Route path={pages.getStarted} element={<GetStarted />} />
           <Route path={pages.signIn} element={<SignInPage />} />

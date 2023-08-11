@@ -64,7 +64,6 @@ export default function HomePage() {
 const HomePageContainer = styled.div`
   margin-top: 80px;
   margin-bottom: 70px;
-  padding-top: 50px;
   padding-bottom: 90px;
   padding-left: 10px;
   padding-right: 10px;
