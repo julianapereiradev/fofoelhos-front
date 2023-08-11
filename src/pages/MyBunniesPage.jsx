@@ -16,6 +16,8 @@ export default function MyBunniesPage() {
 
   const [myBunnies, setMyBunnies] = useState(undefined);
 
+  const [nullBunnies, setNullBunnies] = useState(undefined);
+
   useEffect(() => {
     validateUser(user, setUser);
 
@@ -23,6 +25,7 @@ export default function MyBunniesPage() {
       .get(requisitions.getMyBunnies, headersAuth(user.token))
       .then((res) => {
         setMyBunnies(res.data.resultMyBunnies);
+        setNullBunnies(res.data.active)
         console.log("res de getMyBunnies front:", res);
       })
       .catch((error) => {
@@ -47,10 +50,11 @@ export default function MyBunniesPage() {
   }
 
   console.log("tudo de myBunnies aqui:", myBunnies);
+  console.log('nullbunnies', nullBunnies)
 
-  if (!myBunnies) {
-    return <Loading />;
-  }
+  // if (myBunnies === undefined) {
+  //   return <Loading />;
+  // }
 
   return (
     <>
@@ -67,7 +71,7 @@ export default function MyBunniesPage() {
           {myBunnies ? (
             myBunnies.map((item) => <MyBunny key={item.id} item={item} />)
           ) : (
-            <h1>Você ainda não tem coelhos cadastrados!</h1>
+            <h1>Ops, você não tem coelhos cadastrados!</h1>
           )}
         </BunnyItemHomeBox>
       </HomePageContainer>
