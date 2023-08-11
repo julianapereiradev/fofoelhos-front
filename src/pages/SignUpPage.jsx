@@ -112,7 +112,7 @@ export default function SignUpPage() {
           {disable ? (
             <ThreeDots
               type="ThreeDots"
-              color="#ff995c"
+              color="#babae7"
               height={20}
               width={50}
             />
@@ -148,11 +148,11 @@ const SingUpBox = styled.form`
 
 
 export const LinkToSignIn = styled(Link)`
- color:  #ff995c;
+ color: #babae7;
  font-Size: 14px;
  text-decoration: none;
  font-size: 13px;
- border: 2px solid #ff995c;
+ border: 2px solid#babae7;
  width: 100%;
  height: 45px;
  border-radius: 50px;

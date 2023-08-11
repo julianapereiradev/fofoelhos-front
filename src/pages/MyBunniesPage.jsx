@@ -94,7 +94,7 @@ const DivHeader = styled.div`
 
   p {
     font-family: "Pontano Sans", sans-serif;
-    color: #ff995c;
+    color:#babae7;
     font-size: 20px;
     margin-left: 10px;
     letter-spacing: 1px;
@@ -103,7 +103,7 @@ const DivHeader = styled.div`
 `;
 
 const LinkLogout = styled.div`
-  color: #ff995c;
+  color:#babae7;
   font-size: 14px;
   text-decoration: none;
   font-size: 28px;

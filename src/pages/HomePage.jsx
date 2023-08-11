@@ -53,7 +53,7 @@ export default function HomePage() {
           ) : (
             <ThreeDots
               type="ThreeDots"
-              color="#ffffff"
+              color="#babae7"
               height={90}
               width={150}
             />

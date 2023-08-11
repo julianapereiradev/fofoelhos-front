@@ -33,13 +33,15 @@ const GetStartedContainer = styled.form`
 
   img {
     width: 200px;
+    margin-bottom: 30px;
   }
 
   h1 {
     font-weight: 700;
-    font-size: 48px;
+    font-size: 50px;
     letter-spacing: 2px;
-    color: #ff995c;
+    color: #babae7;
+    font-family: 'Sacramento', cursive;
   }
 
   h2 {
@@ -55,8 +57,8 @@ const Space = styled.div`
 const BottomText = styled.h4`
   position: absolute;
   bottom: 10px;
-  left: 50%; /* Posiciona o texto no centro horizontal */
-  transform: translateX(-50%); /* Centraliza horizontalmente */
+  left: 50%; 
+  transform: translateX(-50%);
   color: #8a8a8a;
   font-weight: 300;
   font-size: 12px;

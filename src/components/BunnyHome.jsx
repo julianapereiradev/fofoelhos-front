@@ -64,15 +64,18 @@ const TextBox = styled.div`
   padding-left: 10px;
   padding-bottom: 10px;
   padding-top: 10px;
+  background-color: #f7f5f5;
  p {
   font-size: 16px;
   letter-spacing: 1px;
   margin-bottom: 3px;
-  color: #b46f45;
+  color: #8a8a8a;
+  
  }
 
  span {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 25px;
+  font-family: 'Sacramento', cursive;
  }
 `;

@@ -214,7 +214,7 @@ if (!tables) {
           {disable ? (
             <ThreeDots
               type="ThreeDots"
-              color="#ff995c"
+              color="#babae7"
               height={20}
               width={50}
             />
@@ -229,7 +229,7 @@ if (!tables) {
 }
 
 const DivHeader = styled.div`
-  background-color: #ff995c;
+  background-color:#babae7;
   position: fixed;
   top: 0;
   left: 0;
@@ -289,7 +289,7 @@ const ActiveDiv = styled.div`
   letter-spacing: 1px;
   font-size: 13px;
   background-color: #ffffff;
-  color: #b46f45;
+  color: #8a8a8a;
   margin-bottom: 50px;
 
   div {

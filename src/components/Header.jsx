@@ -25,7 +25,7 @@ export default function Header() {
 
     return (
         <DivHeader>
-        <p>FOFOELHOS AGENCY</p>
+        <p>Fofoelhos Agency</p>
         <LinkLogout onClick={() => logout()}>
         <ion-icon name="chevron-forward-outline"></ion-icon>        </LinkLogout>
       </DivHeader>
@@ -33,7 +33,7 @@ export default function Header() {
 }
 
 const DivHeader = styled.div`
-  background-color: #ffffff;
+  background-color:#babae7;
   position: fixed;
   top: 0;
   left: 0;
@@ -47,20 +47,21 @@ const DivHeader = styled.div`
   z-index: 1;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
   p {
-    font-family: 'Pontano Sans', sans-serif;
-    color: #ff995c;
-    font-size: 20px;
+    font-family: 'Sacramento', cursive;
+    color:#e7e7e7;
+    font-size: 30px;
     margin-left: 10px;
     letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: 600;
   }
 `;
 
 
 const LinkLogout = styled.div`
- color: #ff995c;
+ color:#e7e7e7;
  font-Size: 14px;
  text-decoration: none;
  font-size: 28px;

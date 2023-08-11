@@ -2,7 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     * {
-        font-family: 'Pontano Sans', sans-serif;
+        font-family: 'Sacramento', cursive;
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 400;
         box-sizing: border-box;
@@ -10,14 +11,14 @@ const GlobalStyle = createGlobalStyle`
     body {
         max-width: 500px;
 		height: 100vh;
-		background-color: #fff4ee;
-        /* border: 1px solid black; */
-        font-family: 'Pontano Sans', sans-serif;
+		background-color: #ffffff;
+        font-family: 'Sacramento', cursive;
+        font-family: 'Montserrat', sans-serif;
     }
 
     button {
         cursor: pointer;
-        background-color: #ff995c;
+        background-color: #babae7;
         border: none;
         border-radius: 50px;
         color: #FFFFFF;
@@ -26,34 +27,38 @@ const GlobalStyle = createGlobalStyle`
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 1px;
-        box-shadow: 1px 10px 32px rgba(255,153,92,0.86);
+        box-shadow: 1px 10px 32px rgba(186, 186, 231, 0.86);;
+        font-family: 'Montserrat', sans-serif;
         
         &:hover {
-        color: #ff995c;
+        color:#babae7;
         background-color: white;
         }
     }
 
     input {
-        font-family: 'Pontano Sans', sans-serif;
+        font-family: 'Sacramento', cursive;
+        font-family: 'Montserrat', sans-serif;
 		height: 50px;
 		width: 100%;
 		border: none;
 		border-radius: 10px;
 		font-size: 20px;
 		margin-bottom: 10px;
-        color: #b46f45;
+        color: #8a8a8a;
         font-size: 13px;
         letter-spacing: 1px;
         padding-left: 10px;
         font-weight: 700;
-        accent-color: #b46f45;
+        accent-color: #8a8a8a;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
         
         &:focus {
         outline: none;
-        border: 1px solid #b46f45;
-        font-family: 'Pontano Sans', sans-serif;
-        color: #b46f45;
+        border: 1px solid #8a8a8a;
+        font-family: 'Sacramento', cursive;
+        font-family: 'Montserrat', sans-serif;
+        color: #8a8a8a;
         font-size: 13px;
         letter-spacing: 1px;
         padding-left: 10px;
@@ -61,8 +66,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
 		&::placeholder {
-			font-family: 'Pontano Sans', sans-serif;
-			color: #b46f45;
+            font-family: 'Sacramento', cursive;
+        font-family: 'Montserrat', sans-serif;
+			color: #8a8a8a;
             font-size: 13px;
             letter-spacing: 1px;
             padding-left: 10px;
@@ -76,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         border-radius: 10px;
         background-color: #FFFFFF;
-        color: #b46f45;
+        color: #8a8a8a;
         font-size: 13px;
         letter-spacing: 2px;
         padding-left: 10px;
@@ -85,9 +91,10 @@ const GlobalStyle = createGlobalStyle`
 
         &:focus {
         outline: none;
-        border: 1px solid #b46f45;
-        font-family: 'Pontano Sans', sans-serif;
-        color: #b46f45;
+        border: 1px solid #8a8a8a;
+        font-family: 'Sacramento', cursive;
+        font-family: 'Montserrat', sans-serif;
+        color: #8a8a8a;
         font-size: 13px;
         letter-spacing: 1px;
         font-weight: 700;

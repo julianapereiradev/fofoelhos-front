@@ -98,7 +98,7 @@ export default function BunnyPage() {
             </DivForInfos>
           </>
         ) : (
-          <ThreeDots type="ThreeDots" color="#ff995c" height={90} width={150} />
+          <ThreeDots type="ThreeDots" color="#babae7" height={90} width={150} />
         )}
       </BunnyContainer>
     </>
@@ -117,7 +117,7 @@ const LinkToHome = styled.div`
   }
 
   /* Estilos para criar o círculo */
-  background-color: #ff995c;
+  background-color:#babae7;
   width: 35px;
   height: 35px; 
   border-radius: 50%;
@@ -163,7 +163,7 @@ const DivForInfos = styled.div`
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 16px;
-    color: #b46f45;
+    color: #8a8a8a;
   }
 
   button {

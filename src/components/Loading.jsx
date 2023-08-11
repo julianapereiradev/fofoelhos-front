@@ -5,7 +5,7 @@ export default function Loading() {
   return (
     <LoadingContainer>
       <h1>CARREGANDO</h1>
-      <ThreeDots type="ThreeDots" color="#ff995c" height={20} width={50} />
+      <ThreeDots type="ThreeDots" color="#babae7" height={20} width={50} />
     </LoadingContainer>
   );
 }
@@ -24,7 +24,7 @@ const LoadingContainer = styled.form`
     font-weight: 700;
     font-size: 30px;
     letter-spacing: 2px;
-    color: #ff995c;
+    color:#babae7;
     letter-spacing: 1px;
   }
 `;

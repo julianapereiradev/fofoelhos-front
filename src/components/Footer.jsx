@@ -38,7 +38,7 @@ export default function Footer() {
 }
 
 const DivFooter = styled.div`
-  background-color: #ffffff;
+  background-color: #babae7;;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -54,7 +54,7 @@ const DivFooter = styled.div`
 `;
 
 const LinkFooter = styled.div`
- color: #ff995c;
+ color:#ffffff;
  font-Size: 14px;
  text-decoration: none;
  font-size: 28px;
