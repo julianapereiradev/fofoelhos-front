@@ -42,7 +42,7 @@ export default function SignInPage() {
   return (
       <SingInBox onSubmit={SignIn}>
         <img src={logoGetStarted} alt="Imagem do Logo"/>
-        
+        <h1>Login</h1>
           <input
             type="email"
             autoComplete="email"
@@ -92,6 +92,13 @@ const SingInBox = styled.form`
   padding: 30px;
   max-width: 500px;
   height: 100vh;
+
+  h1 {
+  font-family: 'Sacramento', cursive;
+  color: #babae7;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
 
   img {
     width: 200px;

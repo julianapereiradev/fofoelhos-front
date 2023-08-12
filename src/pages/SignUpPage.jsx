@@ -50,7 +50,7 @@ export default function SignUpPage() {
   return (
         <SingUpBox onSubmit={SignUp}>
         <img src={logoGetStarted} alt="Imagem do Logo"/>
-
+        <h1>Cadastro</h1>
           <input
             type="text"
             autoComplete="name"
@@ -77,15 +77,17 @@ export default function SignUpPage() {
             disabled={disable}
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
+            maxLength="11"
           />
            <input
             type="text"
             autoComplete="phone"
-            placeholder="TELEFONE DO TUTOR"
+            placeholder="DDD + TELEFONE"
             required
             disabled={disable}
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
+            maxLength="11"
           />
           <input
             type="password"
@@ -117,7 +119,7 @@ export default function SignUpPage() {
               width={50}
             />
           ) : (
-            "CADASTRAR"
+            "SEJA UM TUTOR"
           )}
           </LoadingButtonContent>
         </button>
@@ -140,6 +142,13 @@ const SingUpBox = styled.form`
     width: 200px;
     margin-bottom: 30px;
   }
+
+h1 {
+  font-family: 'Sacramento', cursive;
+  color: #babae7;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
 
   button {
     margin-top: 40px;
