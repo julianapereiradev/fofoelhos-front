@@ -275,7 +275,7 @@ const DivHeader = styled.div`
 
   h1 {
     font-family: 'Sacramento', cursive;
-    color:#e7e7e7;
+    color:#ffffff;
     font-size: 30px;
     margin-right: 10px;
     letter-spacing: 1px;

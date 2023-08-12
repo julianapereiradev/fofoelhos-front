@@ -27,7 +27,8 @@ export default function Header() {
         <DivHeader>
         <p>Fofoelhos Agency</p>
         <LinkLogout onClick={() => logout()}>
-        <ion-icon name="chevron-forward-outline"></ion-icon>        </LinkLogout>
+        <ion-icon name="log-out-outline"></ion-icon>       
+        </LinkLogout>
       </DivHeader>
     )
 }
@@ -51,7 +52,7 @@ const DivHeader = styled.div`
 
   p {
     font-family: 'Sacramento', cursive;
-    color:#e7e7e7;
+    color:#ffffff;
     font-size: 30px;
     margin-left: 10px;
     letter-spacing: 1px;
@@ -61,7 +62,7 @@ const DivHeader = styled.div`
 
 
 const LinkLogout = styled.div`
- color:#e7e7e7;
+ color:#ffffff;
  font-Size: 14px;
  text-decoration: none;
  font-size: 28px;

@@ -47,6 +47,7 @@ export default function HomePage() {
       <Header />
 
       <HomePageContainer>
+      <h4>Clique abaixo em algum coelhinho(a) para contratar seus serviços</h4>
         <BunnyItemHomeBox>
           {bunnies ? (
             bunnies.map((item) => <BunnyHome key={item.id} item={item} />)
@@ -68,12 +69,25 @@ export default function HomePage() {
 
 
 const HomePageContainer = styled.div`
-  margin-top: 80px;
+  margin-top: 90px;
   margin-bottom: 70px;
   padding-bottom: 90px;
   padding-left: 10px;
   padding-right: 10px;
   max-width: 500px;
+
+  h4 {
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #8a8a8a;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    padding-left: 10px;
+  padding-right: 10px;
+  }
 `;
 
 const BunnyItemHomeBox = styled.div`

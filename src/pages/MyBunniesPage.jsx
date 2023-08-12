@@ -61,12 +61,12 @@ export default function MyBunniesPage() {
       <DivHeader>
         <p>Meus Filhotes</p>
         <LinkLogout onClick={() => logout()}>
-          <ion-icon name="chevron-forward-outline"></ion-icon>{" "}
+        <ion-icon name="log-out-outline"></ion-icon>
         </LinkLogout>
       </DivHeader>
 
       <HomePageContainer>
-        <h4>Clique abaixo em algum para editar</h4>
+        <h4>Clique abaixo em algum dos seus orelhudinhos(as) para atualizar seus dados</h4>
         <BunnyItemHomeBox>
           {myBunnies ? (
             myBunnies.map((item) => <MyBunny key={item.id} item={item} />)
@@ -99,7 +99,7 @@ const DivHeader = styled.div`
 
   p {
     font-family: "Sacramento", cursive;
-    color: #e7e7e7;
+    color: #ffffff;
     font-size: 30px;
     margin-left: 10px;
     letter-spacing: 1px;
@@ -108,7 +108,7 @@ const DivHeader = styled.div`
 `;
 
 const LinkLogout = styled.div`
-  color: #e7e7e7;
+  color: #ffffff;
   font-size: 14px;
   text-decoration: none;
   font-size: 28px;
@@ -131,6 +131,9 @@ const HomePageContainer = styled.div`
     letter-spacing: 1px;
     padding-left: 10px;
     font-family: "Montserrat", sans-serif;
+    text-align: center;
+    padding-left: 10px;
+  padding-right: 10px;
   }
 `;
 
