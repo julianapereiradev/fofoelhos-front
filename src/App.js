@@ -13,6 +13,7 @@ import UpdateFormPage from "./pages/UpdateFormPage";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import PageNotFound from "./components/PageNotFound";
+import UserPage from "./pages/UserPage";
 
 function ScrollToTopOnPageChange() {
   const { pathname } = useLocation();
@@ -26,10 +27,11 @@ function ScrollToTopOnPageChange() {
 
 function App() {
   const [user, setUser] = useState(0)
+  const [idUser, setIdUser] = useState(0)
 
   return (
    
-      <AuthContext.Provider value={{user, setUser}}>
+      <AuthContext.Provider value={{user, setUser, idUser, setIdUser}}>
         <BrowserRouter>
         <ScrollToTopOnPageChange />
         <Routes>
@@ -41,6 +43,7 @@ function App() {
           <Route path={pages.bunnyId + ':id'} element={<BunnyPage />} />
           <Route path={pages.myBunnies} element={<MyBunniesPage />} />
           <Route path={pages.updateBunny + ':id'} element={<UpdateFormPage />} />
+          <Route path={pages.getUser+ ':id'} element={<UserPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         </BrowserRouter>

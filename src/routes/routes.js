@@ -6,11 +6,12 @@ export const pages = {
     bunnyId: '/coelho/',
     formPage: '/formulario',
     myBunnies: '/meus-coelhos',
-    updateBunny: '/atualizar-coelho/'
+    updateBunny: '/atualizar-coelho/',
+    getUser: '/meus-dados/'
 }
 
-// const API_URL = 'http://localhost:5000';
-const API_URL = `${process.env.REACT_APP_API_URL}`
+const API_URL = 'http://localhost:5000';
+// const API_URL = `${process.env.REACT_APP_API_URL}`
 
 export const requisitions = {
     postSignUp: API_URL + '/signup',
@@ -22,6 +23,8 @@ export const requisitions = {
     getMyBunnies: API_URL + '/myBunnies',
     updateBunny: API_URL + '/bunny/',
     logout: API_URL + '/logout',
+    getUser: API_URL + '/user/',
+    updateUser: API_URL + '/user/'
 }
 
 export function headersAuth(token) {

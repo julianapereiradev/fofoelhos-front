@@ -3,3 +3,9 @@ export function validateUser(user, setUser) {
         return setUser({ ...JSON.parse(localStorage.user) }); //recuperar dados do localStorage
     }
 }
+
+export function validateIdUser(idUser, setIdUser) {
+    if (!idUser && localStorage.idUser) {
+        return setIdUser({ ...JSON.parse(localStorage.idUser) }); //recuperar dados do localStorage
+    }
+}

@@ -5,7 +5,7 @@ import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import AuthContext from "../contexts/AuthContext";
 import { headersAuth, pages, requisitions } from "../routes/routes";
-import { validateUser } from "../constants/functions";
+import { validateIdUser, validateUser } from "../constants/functions";
 import BunnyHome from "../components/BunnyHome";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -14,12 +14,13 @@ import Loading from "../components/Loading";
 export default function HomePage() {
   const navigate = useNavigate();
 
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser, idUser, setIdUser} = useContext(AuthContext);
 
   const [bunnies, setBunnies] = useState(undefined);
 
   useEffect(() => {
     validateUser(user, setUser);
+    validateIdUser(idUser, setIdUser)
 
     axios
       .get(requisitions.getBunnies, headersAuth(user.token))
@@ -41,6 +42,9 @@ export default function HomePage() {
     return <Loading />
    }
 
+
+console.log('idUser', idUser)
+console.log('user', user)
 
   return (
     <>

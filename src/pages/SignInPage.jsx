@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function SignInPage() {
-  const { setUser } = useContext(AuthContext);
+  const { setUser, idUser, setIdUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -31,10 +31,17 @@ export default function SignInPage() {
         const newUser = {
           token: res.data.token,
         };
+
+        const newIdUser = {
+          idUser: res.data.userId,
+        };
         setUser(newUser);
         localStorage.setItem("user", JSON.stringify(newUser));
+        setIdUser(newIdUser)
+        localStorage.setItem("idUser", JSON.stringify(newIdUser));
         navigate(pages.home);
         setDisable(false);
+        console.log(  'res de sign in AQUUII', res)
       })
       .catch((error) => {
         console.log("erro em SignIn:", error);
