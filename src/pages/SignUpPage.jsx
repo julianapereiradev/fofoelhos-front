@@ -5,6 +5,8 @@ import { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import axios from "axios";
 import logoGetStarted from "../images/logoGetStarted.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SignUpPage() {
   const [name, setName] = useState("");
@@ -21,7 +23,12 @@ export default function SignUpPage() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      return alert("Confirmação de senha está incorreta!");
+      return (
+        toast.error('Senhas incorretas', {
+          position: "top-center",
+          autoClose: 5000,
+        })
+      )
     }
 
     const newSignUp = {
@@ -42,13 +49,17 @@ export default function SignUpPage() {
       })
       .catch((error) => {
         console.log('error de signUp:', error)
-        alert(error.response.data);
+        toast.error(error.response.data.message, {
+          position: "top-center",
+          autoClose: 5000,
+        });
         setDisable(false);
       });
   }
 
   return (
         <SingUpBox onSubmit={SignUp}>
+        <ToastContainer position="top-center" autoClose={5000} />
         <img src={logoGetStarted} alt="Imagem do Logo"/>
         <h1>Cadastro</h1>
           <input

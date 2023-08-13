@@ -7,6 +7,8 @@ import AuthContext from "../contexts/AuthContext";
 import { validateUser } from "../constants/functions";
 import { headersAuth, pages, requisitions } from "../routes/routes";
 import Loading from "../components/Loading";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function UpdateFormPage() {
   const { user, setUser } = useContext(AuthContext);
@@ -73,15 +75,30 @@ export default function UpdateFormPage() {
     e.preventDefault();
  
     if (selectedBreed === "1" || selectedBreed === 1) {
-      return alert("Selecione uma raça");
+      return (
+        toast.error('Selecione uma raça', {
+          position: "top-center",
+          autoClose: 5000,
+        })
+      )
     }
 
     if (selectedSkinColor === "1" || selectedSkinColor === 1) {
-      return alert("Selecione uma cor de pêlo");
+      return (
+        toast.error('Selecione uma cor de pelo', {
+          position: "top-center",
+          autoClose: 5000,
+        })
+      )
     }
 
     if (selectedSize === "1" || selectedSize === 1) {
-      return alert("Selecione um tamanho");
+      return (
+        toast.error('Selecione um tamanho', {
+          position: "top-center",
+          autoClose: 5000,
+        })
+      )
     }
 
     const newBunnyUpdate = {
@@ -109,7 +126,10 @@ export default function UpdateFormPage() {
       })
       .catch((error) => {
         console.log("error de UpdateBunnyItem na UpdateFormPage:", error);
-        alert(error.response.data);
+       toast.error(error.response.data, {
+          position: "top-center",
+          autoClose: 5000,
+        });
         setDisable(false);
       });
   }
@@ -129,6 +149,7 @@ export default function UpdateFormPage() {
       </DivHeader>
 
       <FormPageTag onSubmit={UpdateBunnyItem}>
+      <ToastContainer position="top-center" autoClose={5000} />
         <input
           type="text"
           autoComplete="name"

@@ -7,7 +7,6 @@ import { validateUser } from "../constants/functions";
 import { headersAuth, pages, requisitions } from "../routes/routes";
 import MyBunny from "../components/MyBunny";
 import Footer from "../components/Footer";
-import Loading from "../components/Loading";
 
 export default function MyBunniesPage() {
   const navigate = useNavigate();

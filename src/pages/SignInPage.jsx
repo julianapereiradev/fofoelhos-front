@@ -6,6 +6,10 @@ import { ThreeDots } from "react-loader-spinner";
 import axios from "axios";
 import AuthContext from "../contexts/AuthContext";
 import logoGetStarted from "../images/logoGetStarted.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 export default function SignInPage() {
   const { setUser } = useContext(AuthContext);
@@ -34,13 +38,18 @@ export default function SignInPage() {
       })
       .catch((error) => {
         console.log("erro em SignIn:", error);
-        alert(error.response.data.message);
+        toast.error(error.response.data.message, {
+          position: "top-center",
+          autoClose: 5000,
+        });
         setDisable(false);
       });
   }
 
   return (
       <SingInBox onSubmit={SignIn}>
+      <ToastContainer position="top-center" autoClose={5000} />
+
         <img src={logoGetStarted} alt="Imagem do Logo"/>
         <h1>Login</h1>
           <input
