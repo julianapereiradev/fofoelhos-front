@@ -7,6 +7,7 @@ import { validateUser } from "../constants/functions";
 import { headersAuth, pages, requisitions } from "../routes/routes";
 import MyBunny from "../components/MyBunny";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 export default function MyBunniesPage() {
   const navigate = useNavigate();
@@ -15,17 +16,14 @@ export default function MyBunniesPage() {
 
   const [myBunnies, setMyBunnies] = useState(undefined);
 
-  const [nullBunnies, setNullBunnies] = useState(undefined);
-
   useEffect(() => {
     validateUser(user, setUser);
 
     axios
       .get(requisitions.getMyBunnies, headersAuth(user.token))
       .then((res) => {
-        setMyBunnies(res.data.resultMyBunnies);
-        setNullBunnies(res.data.active)
-        console.log("res de getMyBunnies front:", res);
+        setMyBunnies(res.data);
+        console.log("res de getMyBunnies front:", res.data);
       })
       .catch((error) => {
         navigate(pages.home);
@@ -49,11 +47,10 @@ export default function MyBunniesPage() {
   }
 
   console.log("tudo de myBunnies aqui:", myBunnies);
-  console.log('nullbunnies', nullBunnies)
 
-  // if (myBunnies === undefined) {
-  //   return <Loading />;
-  // }
+  if (myBunnies === undefined) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -67,7 +64,7 @@ export default function MyBunniesPage() {
       <HomePageContainer>
         <h4>Clique abaixo em algum dos seus orelhudinhos(as) para atualizar seus dados</h4>
         <BunnyItemHomeBox>
-          {myBunnies ? (
+          {myBunnies.id !== null ? (
             myBunnies.map((item) => <MyBunny key={item.id} item={item} />)
           ) : (
             <h1>Ops, você não tem coelhos cadastrados!</h1>
