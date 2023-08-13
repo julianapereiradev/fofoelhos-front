@@ -11,6 +11,11 @@ export default function Header() {
 
 
   async function logout() {
+    const confirmed = window.confirm("Are you sure you want to log out?");
+    if (!confirmed) {
+      return;
+    }
+
     try {
       await axios.delete(requisitions.logout, headersAuth(user.token));
     } catch (error) {
