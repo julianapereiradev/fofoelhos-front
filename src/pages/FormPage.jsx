@@ -292,6 +292,11 @@ const FormPageTag = styled.form`
   padding-left: 10px;
   padding-right: 10px;
   max-width: 500px;
+
+  button {
+    margin-top: 30px;
+  }
+
 `;
 
 const ActiveDiv = styled.div`
@@ -307,6 +312,7 @@ const ActiveDiv = styled.div`
   background-color: #ffffff;
   color: #8a8a8a;
   margin-bottom: 50px;
+  display: none;
 
   div {
     display: flex;

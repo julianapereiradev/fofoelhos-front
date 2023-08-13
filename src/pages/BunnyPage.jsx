@@ -33,7 +33,9 @@ export default function BunnyPage() {
 
   function redirectWhatsApp() {
     console.log(bunny.phone);
-    const resposta = `Olá, segue as informações abaixo do orelhudinho que você contratou: \n- Nome: ${bunny.name} \n - Idade: ${bunny.age}  \n - Raça: ${bunny.breed}  \n - Cor: ${bunny.skinColor}  \n - Tamanho: ${bunny.size}  \n - Tutor: ${bunny.dono}`;
+    const resposta = `Olá, segue as informações abaixo do orelhudinho que você solicitou o serviço. 
+    As informações abaixo serão passadas para que o tutor possa dar continuidade com o processo de pagamento no privado.
+    \n- Nome: ${bunny.name} \n - Idade: ${bunny.age}  \n - Raça: ${bunny.breed}  \n - Cor: ${bunny.skinColor}  \n - Tamanho: ${bunny.size}  \n - Tutor: ${bunny.dono}`;
 
     const texto = window.encodeURIComponent(resposta);
 
@@ -45,8 +47,8 @@ export default function BunnyPage() {
   }
 
   if (!bunny) {
-    return <Loading />
-   }
+    return <Loading />;
+  }
 
   return (
     <>
@@ -54,80 +56,47 @@ export default function BunnyPage() {
         {bunny ? (
           <>
             <LinkToHome onClick={goToHome}>
-          <ion-icon name="chevron-back-outline"></ion-icon>
-        </LinkToHome>
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </LinkToHome>
             <img src={bunny.url} alt="Imagem do Coelho" />
             <DivForInfos>
-<FirstDiv>
-  <h1>{bunny.name}</h1>
-  <h2>{bunny.age}</h2>
-</FirstDiv>
+              <FirstDiv>
+                <h1>{bunny.name}</h1>
+                <h2>{bunny.age}</h2>
+              </FirstDiv>
 
-<SecondDiv>
-<ion-icon name="checkmark-done-outline"></ion-icon>
-<p>{bunny.breed}</p>
-</SecondDiv>
+              <SecondDiv>
+                <ion-icon name="checkmark-done-outline"></ion-icon>
+                <p>{bunny.breed}</p>
+              </SecondDiv>
 
-<ThirdDiv>
-  <div>
-  <p>Cor</p>
-    <h3>{bunny.skinColor}</h3>
-  </div>
+              <ThirdDiv>
+                <div>
+                  <p>Cor</p>
+                  <h3>{bunny.skinColor}</h3>
+                </div>
 
-  <div>
-  <p>Tamanho</p>
-    <h3>{bunny.size}</h3>
-  </div>
-</ThirdDiv>
+                <div>
+                  <p>Tamanho</p>
+                  <h3>{bunny.size}</h3>
+                </div>
+              </ThirdDiv>
 
+              <FourthDiv>
+                <FourthSubDiv>
+                  <ion-icon name="person-circle-outline"></ion-icon>
+                  <div>
+                    <h2>{bunny.dono}</h2>
+                    <p>Tutor(a)</p>
+                  </div>
+                </FourthSubDiv>
+              </FourthDiv>
 
-<FourthDiv>
+              <FifthDiv>
+                <h2>DESCRIÇÃO:</h2>
+                <p>{bunny.description}</p>
+              </FifthDiv>
 
-<FourthSubDiv>
-<ion-icon name="person-circle-outline"></ion-icon>
-<div>
-  <h2>{bunny.dono}</h2>
-<p>Tutor(a)</p>
-</div>
-</FourthSubDiv>
-
-<ion-icon name="call" onClick={redirectWhatsApp}></ion-icon>
-</FourthDiv>
-
-<FifthDiv>
-<h2>DESCRIÇÃO:</h2>
-<p>{bunny.description}</p>
-</FifthDiv>
-
-
-              {/* <span>
-                {bunny.name}
-              </span>
-              <span>
-                {bunny.age}
-              </span>
-              <span>
-                <strong>DESCRIÇÃO: </strong>
-                {bunny.description}
-              </span>
-
-              <span>
-                <strong>DONO: </strong>
-                {bunny.dono}
-              </span>
-              <span>
-                <strong>RAÇA: </strong>
-                {bunny.breed}
-              </span>
-              <span>
-                <strong>COR: </strong>
-                {bunny.skinColor}
-              </span>
-              <span>
-                <strong>TAMANHO: </strong>
-                {bunny.size}
-              </span> */}
-            
               <button onClick={redirectWhatsApp}>CONTRATAR</button>
             </DivForInfos>
           </>
@@ -151,17 +120,17 @@ const LinkToHome = styled.div`
   }
 
   /* Estilos para criar o círculo */
-  background-color:#babae7;
+  background-color: #babae7;
   width: 35px;
-  height: 35px; 
+  height: 35px;
   border-radius: 50%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 `;
 
 const BunnyContainer = styled.form`
- position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -206,122 +175,119 @@ const DivForInfos = styled.div`
 `;
 
 const FirstDiv = styled.div`
- display: flex;
- flex-direction: row;
- justify-content: space-between;
- align-items: center;
- margin-bottom: 15px;
-
- h1 {
-  font-size: 60px;
-  font-family: 'Sacramento', cursive;
-  margin-right: 10px;
-  text-align: left;
- }
-
- h2 {
-  font-size: 16px;
-  text-align: center;
-  font-weight: 500;
- }
-`;
-
-const SecondDiv = styled.div`
- display: flex;
- flex-direction: row;
- align-items: center;
-
- ion-icon {
-  font-size: 22px;
-  margin-right: 5px;
- }
-`;
-
-const ThirdDiv = styled.div`
- display: flex;
- flex-direction: row;
- align-items: center;
- justify-content: space-between;
- margin-top: 30px;
-
- div {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #ebebeb;
-  width: 145px;
-  height: 80px;
-  text-align: center;
-  border-radius: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 
-  p {
-    font-size: 12px;
-    margin-bottom: 4px;
+  h1 {
+    font-size: 60px;
+    font-family: "Sacramento", cursive;
+    margin-right: 10px;
+    text-align: left;
   }
-
-  h3 {
-    font-size: 14px;
-    font-weight: 700;
-  }
-
- }
-`;
-
-const FourthDiv = styled.div`
- display: flex;
- flex-direction: row;
- align-items: center;
- justify-content: space-between;
- margin-top: 20px;
- border-radius: 10px;
- border: 1px solid #ededf1;
-
- ion-icon {
-  color: #babae7;
-  font-size: 30px;
-  padding-right: 3px;
- }
-
-`;
-
-const FourthSubDiv = styled.div`
- display: flex;
- flex-direction: row;
- align-items: center;
-
- ion-icon {
-  font-size: 70px;
-  margin-right: 5px;
-  color: #cac9c9
- }
-
- div {
-  display: flex;
-  flex-direction: column;
 
   h2 {
     font-size: 16px;
-    font-weight: 600;
+    text-align: center;
+    font-weight: 500;
+  }
+`;
+
+const SecondDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  ion-icon {
+    font-size: 22px;
+    margin-right: 5px;
+  }
+`;
+
+const ThirdDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ebebeb;
+    width: 145px;
+    height: 80px;
+    text-align: center;
+    border-radius: 10px;
+
+    p {
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+`;
+
+const FourthDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #ededf1;
+
+  ion-icon {
+    color: #babae7;
+    font-size: 30px;
+    padding-right: 3px;
+  }
+`;
+
+const FourthSubDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  ion-icon {
+    font-size: 70px;
+    margin-right: 5px;
+    color: #cac9c9;
   }
 
-  p {
-    margin-top: 3px;
-    font-size: 12px;
+  div {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    p {
+      margin-top: 3px;
+      font-size: 12px;
+    }
   }
- }
 `;
 
 const FifthDiv = styled.div`
- margin-top: 30px;
+  margin-top: 30px;
 
- h2 {
-  font-weight: 700;
-  letter-spacing: 2px;
- }
+  h2 {
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
 
- p {
-  padding-left: 10px;
-  margin-top: 5px;
- }
-
+  p {
+    padding-left: 10px;
+    margin-top: 5px;
+  }
 `;
