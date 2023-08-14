@@ -7,7 +7,7 @@ import AuthContext from "../contexts/AuthContext";
 
 export default function Header() {
   const navigate = useNavigate();
-  const { user, setUser} = useContext(AuthContext);
+  const { user, setUser, idUser, setIdUser} = useContext(AuthContext);
 
 
   async function logout() {
@@ -25,6 +25,8 @@ export default function Header() {
 
     localStorage.removeItem("user");
     setUser(0);
+    localStorage.removeItem("idUser");
+    setIdUser(0)
     navigate(pages.signIn);
   }
 

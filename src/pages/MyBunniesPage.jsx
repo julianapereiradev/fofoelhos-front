@@ -12,7 +12,7 @@ import Loading from "../components/Loading";
 export default function MyBunniesPage() {
   const navigate = useNavigate();
 
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser,idUser, setIdUser } = useContext(AuthContext);
 
   const [myBunnies, setMyBunnies] = useState(undefined);
 
@@ -48,6 +48,8 @@ export default function MyBunniesPage() {
 
     localStorage.removeItem("user");
     setUser(0);
+    localStorage.removeItem("idUser");
+    setIdUser(0)
     navigate(pages.signIn);
   }
 
